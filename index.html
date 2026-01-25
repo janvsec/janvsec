@@ -67,7 +67,7 @@ body::before {
 }
 
 .corner.bottom-left { 
-    bottom: -450px; 
+    bottom: -80%; 
     left: 10px; 
 }
 
@@ -149,10 +149,9 @@ body::before {
 
 
 
-/* Sections */
 section { 
     max-width: 900px; 
-    margin: 0 auto 60px; 
+    margin: 0 auto 00px; 
     padding: 0 20px; 
     position: relative; 
     transition: opacity 0.3s ease; 
@@ -162,6 +161,7 @@ section {
     font-size: 1.5rem; 
     margin-bottom: 30px; 
     transition: opacity 0.3s ease; 
+    margin-top: 20px;
     font-weight: 00;
 }
 
@@ -177,7 +177,7 @@ section {
     gap: 30px; 
 }
 
-/* Cards */
+
 .card {
     background-color: #0a0a0a;
     border: 1px solid #222;
@@ -207,6 +207,7 @@ section {
     color: #aaa; 
     line-height: 1.5; 
     transition: opacity 0.3s ease; 
+    word-break: break-word; 
 }
 
 .skill-tags { 
@@ -359,9 +360,46 @@ footer .footer-line {
     background: #3d3d3d; 
     margin-top: 40px;
 }
+
+
+
+
+
+
+.grid-section {
+    position: absolute;
+    margin-top: 60px;
+    height: 580px;
+    width: 50%;
+    left: 50%;
+    min-width: 1000px;
+
+    align-content: center;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.grid-section::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,0.18) 1px, transparent 1px);
+    background-size: 
+        calc((100% - 1px) / 5) calc(100% - 1px),
+        calc(100% - 1px) calc((100% - 1px) / 5);
+    background-position: 
+        0.5px 0.5px,
+        0.5px 0.5px;
+}
 </style>
 </head>
 <body>
+
 <div class="corner top-right">+</div>
 
 
@@ -396,6 +434,7 @@ footer .footer-line {
         <button class="btn-link" data-key="sec0.btnLink" onclick="document.getElementById('section2').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
     </div>
 </section>
+<div class="grid-section"></div>
 <section id="section1">
     <div class="section-title" data-key="sec1.title">DEFAULT_TEXT</div>
     <div class="bubble-section">
@@ -405,6 +444,38 @@ footer .footer-line {
             <div class="skill-tags">
                 <span class="skill-tag" data-key="sec1.card1Skill1">DEFAULT_SKILL</span>
                 <span class="skill-tag" data-key="sec1.card1Skill2">DEFAULT_SKILL</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 data-key="sec1.card2Title">DEFAULT_TEXT</h3>
+            <p data-key="sec1.card2Desc">DEFAULT_TEXT</p>
+            <div class="skill-tags">
+                <span class="skill-tag" data-key="sec1.card2Skill1">DEFAULT_SKILL</span>
+                <span class="skill-tag" data-key="sec1.card2Skill2">DEFAULT_SKILL</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 data-key="sec1.card2Title">DEFAULT_TEXT</h3>
+            <p data-key="sec1.card2Desc">DEFAULT_TEXT</p>
+            <div class="skill-tags">
+                <span class="skill-tag" data-key="sec1.card2Skill1">DEFAULT_SKILL</span>
+                <span class="skill-tag" data-key="sec1.card2Skill2">DEFAULT_SKILL</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 data-key="sec1.card2Title">DEFAULT_TEXT</h3>
+            <p data-key="sec1.card2Desc">DEFAULT_TEXT</p>
+            <div class="skill-tags">
+                <span class="skill-tag" data-key="sec1.card2Skill1">DEFAULT_SKILL</span>
+                <span class="skill-tag" data-key="sec1.card2Skill2">DEFAULT_SKILL</span>
+            </div>
+        </div>
+        <div class="card">
+            <h3 data-key="sec1.card2Title">DEFAULT_TEXT</h3>
+            <p data-key="sec1.card2Desc">DEFAULT_TEXT</p>
+            <div class="skill-tags">
+                <span class="skill-tag" data-key="sec1.card2Skill1">DEFAULT_SKILL</span>
+                <span class="skill-tag" data-key="sec1.card2Skill2">DEFAULT_SKILL</span>
             </div>
         </div>
         <div class="card">
@@ -461,8 +532,8 @@ const translations = {
         "nav.text3":"DEFAULT_TEXT",
         "sec0.sectionTitle":"DEFAULT_TEXT",
         "sec0.subtitle":"DEFAULT_TEXT",
-        "sec0.subtitle2":"D:\\CYBERSPEC_Enthusiast\\",
-        "sec0.desc":"lorem ipsum SKINIDIIDID DSIDDISI alddj3pejd qakl; 1asd3132e 54",
+        "sec0.subtitle2":"Default text text default",
+        "sec0.desc":"default text ",
         "sec0.btnWhite":"DEFAULT_TEXT",
         "sec0.btnLink":"DEFAULT_TEXT",
         "sec1.title":"DEFAULT_TEXT",
@@ -548,6 +619,8 @@ document.getElementById('enBtn').addEventListener('click', ()=>setLanguage('en')
 setLanguage('sk'); 
 </script>
 <div class="corner bottom-left">+</div>
+
+
 </body>
 </html>
 
