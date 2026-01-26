@@ -39,6 +39,8 @@ body {
     background-color: #000;
     color: #fff;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
 }
 
 body::before {
@@ -49,6 +51,7 @@ body::before {
     background-size: 20px 20px;
     opacity: 0.2;
     pointer-events: none;
+    z-index: 1;
 }
 
 .corner {
@@ -62,15 +65,12 @@ body::before {
     right: 10px; 
 }
 
-
-
-
 .header {
     max-width: 900px;
     margin: 60px auto 40px;
     padding: 0 20px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .lang-switch {
@@ -142,6 +142,7 @@ section {
     padding: 0 20px; 
     position: relative; 
     transition: opacity 0.3s ease; 
+    z-index: 2;
 }
 
 .section-title { 
@@ -281,6 +282,8 @@ footer {
     padding: 30px 20px; 
     color: #888; 
     transition: opacity 0.3s ease; 
+    z-index: 2;
+    position: relative;
 }
 
 footer .footer-line { 
@@ -441,7 +444,7 @@ footer .footer-line {
     left: 50%;
     min-width: 1000px;
     align-content: center;
-    background-color: #000;
+    background-color: #00000000;
     transform: translateX(-50%);
 }
 
@@ -471,7 +474,8 @@ footer .footer-line {
     left: 50%;
     min-width: 1000px;
     align-content: center;
-    background-color: #000;
+    
+    background-color: #00000000;
     transform: translateX(-50%);
 }
 
@@ -557,10 +561,21 @@ footer .footer-line {
         display: none;
     }
 }
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
 </style>
 </head>
 <body>
 
+<div class="orb-container"></div>
+    
 <div class="progress-wrapper">
     <div class="progress-indicator top-indicator">
         <div class="vertical-line"></div>
@@ -834,6 +849,68 @@ function updateProgressBar() {
 
 window.addEventListener("scroll", updateProgressBar);
 window.addEventListener("load", updateProgressBar);
+
+const orbCount = 30;
+const orbs = [];
+const orbContainer = document.querySelector('.orb-container');
+const buffer = 200;
+
+for(let i = 0; i < orbCount; i++){
+    const orb = document.createElement('div');
+    orb.className = 'orb';
+    const size = Math.random() * 150 + 50;
+    orb.style.width = orb.style.height = size + 'px';
+    orb.style.left = Math.random() * window.innerWidth + 'px';
+    orb.style.top = Math.random() * window.innerHeight + 'px';
+    orb.vx = (Math.random() - 0.5) * 0.3;
+    orb.vy = (Math.random() - 0.5) * 0.3;
+    orb.opacity = 0;
+    orb.style.opacity = orb.opacity;
+    orb.targetOpacity = Math.random() * 0.3 + 0.1;
+    orb.fadeSpeed = 0.002 + Math.random() * 0.003;
+    orb.fadeIn = true;
+    orb.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+    orbContainer.appendChild(orb);
+    orbs.push(orb);
+}
+
+function animate() {
+    for(const orb of orbs){
+        let x = parseFloat(orb.style.left);
+        let y = parseFloat(orb.style.top);
+
+        x += orb.vx;
+        y += orb.vy;
+
+        if(x < -buffer) x = window.innerWidth + buffer;
+        if(x > window.innerWidth + buffer) x = -buffer;
+        if(y < -buffer) y = window.innerHeight + buffer;
+        if(y > window.innerHeight + buffer) y = -buffer;
+
+        orb.style.left = x + 'px';
+        orb.style.top = y + 'px';
+
+        if(orb.fadeIn){
+            orb.opacity += orb.fadeSpeed;
+            if(orb.opacity >= orb.targetOpacity) orb.fadeIn = false;
+        } else {
+            orb.opacity -= orb.fadeSpeed;
+            if(orb.opacity <= 0){
+                orb.fadeIn = true;
+                orb.vx = (Math.random() - 0.5) * 0.3;
+                orb.vy = (Math.random() - 0.5) * 0.3;
+            }
+        }
+
+        orb.style.opacity = orb.opacity;
+    }
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
 </script>
 
 </body>
