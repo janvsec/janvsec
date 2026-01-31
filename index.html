@@ -315,8 +315,8 @@ footer {
 }
 
 footer .footer-line { 
-    width: 80px; 
-    height: 2px; 
+    width: 40%; 
+    height: 1px; 
     background: #444; 
     margin: 10px auto 0 auto; 
     border-radius: 1px; 
@@ -468,7 +468,7 @@ footer .footer-line {
 
 .grid-section {
     position: absolute;
-    margin-top: 60px;
+    margin-top: 50px;
     height: 580px;
     width: 50%;
     left: 50%;
@@ -498,8 +498,8 @@ footer .footer-line {
 
 .grid-section2 {
     position: absolute;
-    margin-top: 98px;
-    height: 280px;
+    margin-top: 105px;
+    height: 290px;
     width: 50%;
     left: 50%;
     min-width: 1000px;
@@ -625,6 +625,8 @@ footer .footer-line {
     display: flex;
     flex-direction: column;
     gap: 1px;
+
+
 }
 
 .stack-card {
@@ -632,16 +634,18 @@ footer .footer-line {
     justify-content: space-between;
     align-items: center;
     padding: 14px 18px;
-    height: 10px;
+    height: 15px;
     border-radius: 6px;
     text-decoration: none;
-    color: #d0d0d0;
-    transition: background 0.2s, border-color 0.2s;
-    background: transparent;
+    background-color: rgba(24, 24, 24, 0.856);
     border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
 }
 
-
+.stack-card:hover {
+    background-color: rgb(37, 37, 37);
+    color:white;
+}
 
 .stack-text {
     color: white;
@@ -654,20 +658,18 @@ footer .footer-line {
     font-size: 0.85rem;
     text-align: right;
 }
+.stack-card:hover .stack-action { color: #fff; font-weight: 800; }
 
-.stack-card:hover .stack-action {
-    color: #fff;
-}
 
 .line3 { 
     width: 100%; 
     height: 1px; 
-    background: #3d3d3d; 
+
     margin: 5px 0;
 }
 
 #section3 {
-    margin-bottom: 80px;
+    margin-bottom: 8px;
 }
 
 #section3 .section-title {
@@ -705,6 +707,39 @@ footer .footer-line {
         max-width: 120px;
     }
 }
+
+
+
+
+
+.cont-section-title::before {
+    left: 0;
+}
+
+.cont-section-title::after {
+    right: 0;
+}
+
+
+
+.cont-section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cont-section-title::before,
+.cont-section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #3d3d3d;
+}
+
 </style>
 </head>
 <body>
@@ -863,33 +898,34 @@ footer .footer-line {
 </section>
 
 <section id="section3">
-    <div class="section-title" data-key="sec3.title">DEFAULT_TEXT</div>
+    <div class="cont-section-title" data-key="sec3.title">DEFAULT_TEXT</div>
+</section>
 
 <section id="section-links">
     <div class="stacked-cards">
         <a href="https://www.linkedin.com/in/yourprofile" class="stack-card">
             <div class="stack-text">LinkedIn</div>
-            <div class="stack-action">View profile</div>
+            <div class="stack-action">></div>
         </a>
         <div class="line3"></div>
         <a href="https://github.com/yourprofile" class="stack-card">
             <div class="stack-text">Github</div>
-            <div class="stack-action">Browse repos</div>
+            <div class="stack-action">></div>
         </a>
         <div class="line3"></div>
         <a href="mailto:your@email.com" class="stack-card">
             <div class="stack-text">Mail</div>
-            <div class="stack-action">Send message</div>
+            <div class="stack-action">></div>
         </a>
         <div class="line3"></div>
         <a href="https://instagram.com/yourprofile" class="stack-card">
             <div class="stack-text">Instagram</div>
-            <div class="stack-action">Open page</div>
+            <div class="stack-action">></div>
         </a>
         <div class="line3"></div>
     </div>
 </section>
-</section>
+
 
 
 <footer>
