@@ -7,7 +7,7 @@
 <style>
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/manrope-extralight.ttf") format("truetype");
+    src: url("/manrope-extralight.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/manrope-light.ttf") format("truetype");
+    src: url("/manrope-light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-ExtraLight.ttf") format("truetype");
+    src: url("/Manrope-ExtraLight.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-Light.ttf") format("truetype");
+    src: url("/Manrope-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-Regular.ttf") format("truetype");
+    src: url("/Manrope-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-Medium.ttf") format("truetype");
+    src: url("/Manrope-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-SemiBold.ttf") format("truetype");
+    src: url("/Manrope-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -63,7 +63,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-Bold.ttf") format("truetype");
+    src: url("/Manrope-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -71,7 +71,7 @@
 
 @font-face {
     font-family: "Manrope";
-    src: url("/janvsec/Manrope-ExtraBold.ttf") format("truetype");
+    src: url("/Manrope-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -622,6 +622,29 @@ background: linear-gradient(280deg, rgb(14, 14, 14) 0%, rgba(0, 0, 0, 1) 100%);
     pointer-events: none;
     z-index: 0;
 }
+
+.footer-text{
+    color: white;
+    font-size: 10px;
+    padding: 100px;
+
+}
+
+.ascii-footer{
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.1;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    margin-top: -20px;
+    user-select: none;
+    pointer-events: none;
+    white-space: pre;
+}
+@media (max-width: 400px){
+    .ascii-footer{display:none;}
+}
+
 </style>
 </head>
 <body>
@@ -791,6 +814,17 @@ background: linear-gradient(280deg, rgb(14, 14, 14) 0%, rgba(0, 0, 0, 1) 100%);
 © <span id="year"></span> <span data-key="footer.text">DEFAULT_TEXT</span>
 <div class="footer-line"></div>
 </footer>
+
+
+<pre class="ascii-footer" aria-hidden="true">
+  ▀▀       ▄                            
+  ██ ▄▀▀█▄ ████▄▀█▄ ██▀▄██▀█ ▄█▀█▄ ▄███▀
+  ██ ▄█▀██ ██ ██ ██▄██ ▀███▄ ██▄█▀ ██   
+ ▄██▄▀█▄██▄██ ▀█  ▀█▀ █▄▄██▀▄▀█▄▄▄▄▀███▄
+  ██                                    
+▀▀▀                                    
+</pre>
+
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
