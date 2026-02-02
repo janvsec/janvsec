@@ -588,11 +588,28 @@ footer .footer-line {
 
 .orb {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
-    background: rgb(255, 255, 255);
-    filter: blur(100px);
+    background: radial-gradient(circle at 30% 30%, #ffffff1c, transparent 65%);
+    filter: blur(60px);
     pointer-events: none;
-    z-index: 0;
+    width: 1000px;
+    height: 1000px;
+}
+
+.orb2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+ 
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fcfcfc15, transparent 65%);
+    filter: blur(60px);
+    pointer-events: none;
+    width: 1000px;
+    height: 1000px;
 }
 
 .footer-text{
@@ -762,8 +779,8 @@ footer .footer-line {
 </style>
 </head>
 <body>
-
-<div class="orb-container"></div>
+<div class="orb"></div>
+<div class="orb2"></div>
     
 <div class="progress-wrapper">
     <div class="progress-indicator top-indicator">
@@ -1126,46 +1143,7 @@ function updateProgressBar() {
 window.addEventListener("scroll", updateProgressBar);
 window.addEventListener("load", updateProgressBar);
 
-const orbCount = 5;
-const orbs = [];
-const container = document.querySelector('.orb-container');
 
-for (let i = 0; i < orbCount; i++) {
-    const orb = document.createElement('div');
-    orb.className = 'orb';
-
-    const baseSize = Math.random() * 120 + 80;
-    const baseOpacity = Math.random() * 0.125 + 0.15;
-
-    orb.style.width = orb.style.height = baseSize + 'px';
-    orb.style.left = Math.random() * (window.innerWidth - baseSize) + 'px';
-    orb.style.top = Math.random() * (window.innerHeight - baseSize) + 'px';
-    orb.style.opacity = baseOpacity;
-
-    orb._baseSize = baseSize;
-    orb._baseOpacity = baseOpacity;
-    orb._opacityAmp = Math.random() * 0.08 + 0.04;
-    orb._scaleAmp = Math.random() * 0.08 + 0.04;
-    orb._speed = Math.random() * 0.0003 + 0.00015;
-    orb._phase = Math.random() * Math.PI * 2;
-
-    container.appendChild(orb);
-    orbs.push(orb);
-}
-
-function animate(t) {
-    for (const orb of orbs) {
-        const wave = Math.sin(t * orb._speed + orb._phase);
-        const opacity = orb._baseOpacity + wave * orb._opacityAmp;
-        const scale = 1 + wave * orb._scaleAmp;
-
-        orb.style.opacity = opacity;
-        orb.style.transform = `scale(${scale})`;
-    }
-    requestAnimationFrame(animate);
-}
-
-requestAnimationFrame(animate);
 </script>
 
 </body>
