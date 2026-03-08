@@ -26,17 +26,6 @@ I’m still learning and exploring different areas, with the goal of eventually 
 
 ---
 
-### 🤝 Looking For
-- Collaboration, guidance, or discussion related to **Cybersecurity**
-- Real-world experience, best practices, and problem-solving approaches
-
----
-
-### 👨‍💻 Projects
-- All public projects are available here:  
-  👉 **https://github.com/janvsec**
-
----
 
 ### 📫 Contact
 - LinkedIn: **https://linkedin.com/in/janvsec**
