@@ -11,12 +11,6 @@ I’m still learning and exploring different areas, with the goal of eventually 
 
 ---
 
-### 🔭 Current Work
-- Actively working on multiple technical projects, including my personal website  
-  👉 **[My Own Website Repository](https://github.com/janvsec/janvsec)**
-
----
-
 ### 🌱 Currently Learning
 - **Python** (automation, scripting, tooling)
 - **Bash** (Linux automation, system control)
@@ -25,7 +19,6 @@ I’m still learning and exploring different areas, with the goal of eventually 
 - General **Cybersecurity concepts** (offensive and defensive mindset)
 
 ---
-
 
 ### 📫 Contact
 - LinkedIn: **https://linkedin.com/in/janvsec**
