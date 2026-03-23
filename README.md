@@ -22,7 +22,7 @@ I’m still learning and exploring different areas, with the goal of eventually 
 
 ### 📫 Contact
 <p align="left">
-<a href="https://linkedin.com/in/janvsec" target="_blank">
+<a href="https://linkedin.com/in/janvojvoda" target="_blank">
 <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="30" width="40" />
 </a>
 <a href="https://instagram.com/janvsec" target="_blank">
