@@ -3,381 +3,485 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>janvsec</title>
+<title>janvsec — Ján Vojvoda</title>
 <style>
-.corner.top-right,.lang-switch{top:10px;right:10px}.header,section{max-width:900px;padding:0 20px;z-index:2}.section-title,
-.title{transition:opacity .3s;font-weight:600}.section0 .section-buttons .btn-link,
-.section0 .section-buttons .btn-white{padding:10px 20px;transition:background-color .3s,color .3s,border-color .3s;cursor:pointer}
-.bubble-section3 a,.buttons1,.stack-card{text-decoration:none}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-ExtraLight.ttf) format("truetype");font-weight:200;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-Light.ttf) format("truetype");font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-Regular.ttf) format("truetype");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-Medium.ttf) format("truetype");font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-SemiBold.ttf) format("truetype");font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-Bold.ttf) format("truetype");font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:Manrope;src:url(https://janvsec.github.io/janvsec/Manrope-ExtraBold.ttf) format("truetype");font-weight:800;font-style:normal;font-display:swap}
-body{margin:0;font-family:Manrope,sans-serif;font-weight:400;background-color:#000;color:#fff;scroll-behavior:smooth;overflow-x:hidden;position:relative}body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,#75757559 1px,transparent 1px);background-size:20px 20px;opacity:.2;pointer-events:none;z-index:1}.corner{position:absolute;font-size:1.5rem;color:#888}.header,footer,section{position:relative}.grid-section2::before,.grid-section3::before,.grid-section::before{content:'';top:0;left:0;height:100%;background-image:linear-gradient(90deg,rgb(255 255 255 / .18) 1px,transparent 1px),linear-gradient(0deg,rgb(255 255 255 / .18) 1px,transparent 1px);background-position:.5px .5px,.5px .5px}.header{margin:60px auto 40px}.lang-switch{position:absolute;display:flex;gap:4px}.lang-switch button{background:#141414;color:#aaa;border:1px solid #252525;padding:4px 8px;border-radius:3px;font-size:.75rem;cursor:pointer}.lang-switch button.active{color:#fff}.subtitle{color:#aaa;margin-bottom:10px;transition:opacity .3s}.title{font-size:2rem;margin-bottom:15px}.nav-container button{position:relative;background:0 0;border:none;color:#fff;font-size:.9rem;cursor:pointer;opacity:.8;transition:opacity .3s}.nav-container button::after{content:'';position:absolute;left:0;bottom:-4px;width:100%;height:1px;background-color:#fff;transform:scaleX(0);transform-origin:center;transition:transform .3s}.nav-container button:hover::after{transform:scaleX(1)}section{margin:0 auto 60px;transition:opacity .3s}.section-title{font-size:1.5rem;margin-bottom:30px;margin-top:20px}.bubble-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}.bubble-section3{display:flex;flex-wrap:wrap;gap:30px}.card{background-color:#0a0a0a;border:1px solid #222;border-radius:10px;padding:25px;min-height:200px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,opacity .3s;text-align:left}.card h3,.card p,.section0 .desc,.skill-tag,footer{transition:opacity .3s}.ascii-footer,.buttons1,footer{text-align:center}.card:hover{border-color:#444}.card h3{margin:0;font-size:1.2rem;font-weight:500}.card p{margin:0;color:#aaa;line-height:1.5;word-break:break-word}.skill-tags{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}.skill-tag{background:#151515;color:#aaa;padding:6px 14px;border-radius:999px;font-size:.75rem;border:none}.section0 .section-title{font-size:1.25rem;margin-bottom:8px;font-weight:500}.section0 .subtitle{font-size:1rem;margin-bottom:15px;margin-top:15px}.section0 .desc{line-height:1.6;color:#d8d8d8;margin-bottom:20px;margin-top:5px;max-width:800px;word-break:break-word}#section3,.info-row.values{margin-bottom:8px}.section0 .section-buttons{display:flex;gap:10px;flex-wrap:wrap}.section0 .section-buttons .btn-white{background:#fff;color:#000;border-radius:4px;border:1px solid #fff;box-shadow:0 0 19px 0 rgb(255 255 255 / .4);font-size:.9rem}.section0 .section-buttons .btn-white:hover{background:#000;color:#ebe3e3;border:1px solid #fff}.section0 .section-buttons .btn-link{background:#111;color:#fff;border:1px solid #fff;border-radius:4px;font-size:.9rem}.section0 .section-buttons .btn-link:hover{background:#202020;color:#ccc;border:1px solid #cfcfcf}footer{padding:30px 20px;color:#888;z-index:2}footer .footer-line{width:40%;height:1px;background:#444;margin:10px auto 0;border-radius:1px}@media (max-width:600px){.title{font-size:1.5rem}.bubble-section{grid-template-columns:1fr}.lang-switch{top:5px;right:5px}.section3 .card{min-height:60px;font-size:.8rem}.section-title{font-size:1.3rem}.card{padding:20px;min-height:180px}.card h3{font-size:1.1rem}.section0 .section-buttons{flex-direction:column;align-items:flex-start}.section0 .section-buttons .btn-link,.section0 .section-buttons .btn-white{width:100%;text-align:center}.bubble-section3{justify-content:center;gap:15px}.buttons1{max-width:100px;min-height:20px;padding:10px;font-size:.9rem}.line{width:100%}.nav-container{display:flex;flex-wrap:wrap;gap:15px;justify-content:flex-start}.nav-container button{font-size:.8rem}}@media (max-width:900px){.grid-section,.grid-section2,.grid-section3{display:none}}.buttons1{background:#363636;background:linear-gradient(280deg,#0e0e0e 0,rgb(0 0 0) 100%);font-size:100%;max-width:110px;min-height:24px;padding:13px;align-content:center;border-radius:5px;color:#afafaf;box-shadow:0 0 30px 5px #000;border:1px solid #202020;transition:background-color .2s,max-width .25s,color .2s,border-color .2s,opacity .3s}.code-label,.info-row,.trophy-row{color:#cacaca}.buttons1:hover{background-color:#252525;max-width:150px;color:#6d6d6d;border:1px solid #222}.subtitle-container{display:flex;align-items:center;gap:10px}.line-inline{width:90px;height:1px;margin-bottom:10px;background-color:#aaa;flex-shrink:0}.line,.line2{height:1px;background:#3d3d3d}.line{width:60%;margin-top:40px}.line2{width:100%;margin-top:4px}.grid-section,.grid-section2,.grid-section3{position:absolute;width:50%;left:50%;min-width:1000px;align-content:center;background-color:#0000;transform:translateX(-50%)}.trophy-row{display:flex;justify-content:space-between;align-items:center}.info-row{display:flex;justify-content:space-between;font-size:.9rem}.info-row.values{font-weight:700}.grid-section{margin-top:50px;height:580px}.grid-section::before{position:absolute;width:100%;background-size:calc((100% - 1px)/ 5) calc(100% - 1px),calc(100% - 1px) calc((100% - 1px)/ 5)}.grid-section2{margin-top:105px;height:290px}.grid-section2::before,.grid-section3::before{position:absolute;width:100%;background-size:calc((100% - 1px)/ 6) calc(100% - 1px),calc(100% - 1px) calc((100% - 1px)/ 3)}.grid-section3{margin-top:52px;height:350px}.progress-wrapper{position:fixed;top:50%;left:20px;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;z-index:1000}.progress-track{width:1px;height:400px;background-color:#333;position:relative;overflow:hidden;margin:10px 0}.progress-fill{position:absolute;top:0;left:0;width:100%;height:0%;background-color:#fff;transition:height .1s ease-out}.orb,.orb2{left:50%;transform:translateX(-50%);border-radius:50%;filter:blur(60px);pointer-events:none}.progress-indicator{position:relative;width:16px;height:16px;display:flex;align-items:center;justify-content:center}.progress-indicator .vertical-line{position:absolute;width:2px;height:16px;background-color:#969696}.progress-indicator .horizontal-line{position:absolute;width:16px;height:.5px;background-color:#7e7e7e8a}.orb{position:absolute;background:radial-gradient(circle at 30% 30%,#ffffff1c,transparent 65%);width:1000px;height:1000px}.orb2{position:absolute;top:50%;z-index:-10;background:rgb(255 255 255 / .048);width:800px;height:800px}@media (max-width:1008px){.progress-wrapper{display:none}.orb,.orb2{width:100%}}.ascii-footer{font-family:monospace;font-size:11px;line-height:1.1;color:#5c5c5c;margin-top:-20px;user-select:none;pointer-events:none;white-space:pre}@media (max-width:400px){.ascii-footer{display:none}}#section-links{max-width:600px;margin:5px auto}.stacked-cards{display:flex;flex-direction:column;gap:1px}.stack-card{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;height:15px;border-radius:6px;background-color:rgb(12 12 12 / .856);border:1px solid #181818;transition:background .2s,border-color .2s}.stack-card:hover{background-color:#141414;color:#fff;border:1px solid #252525}.stack-text{color:#fff;font-weight:500;font-size:1rem}.stack-action{color:#afafaf;font-size:.85rem;text-align:right}.stack-card:hover .stack-action{color:#fff;font-weight:800}.line3{width:100%;height:1px;margin:5px 0}.stack-icon{margin-right:10px;color:#fff;display:flex;align-items:center}.stack-card{display:flex;align-items:center;justify-content:flex-start}.stack-text{flex:1}.bubble-section3{display:flex;flex-wrap:wrap;gap:20px;justify-content:flex-start;margin-top:20px}.bubble-section3 .buttons1{display:flex;align-items:center;justify-content:center;cursor:pointer;min-width:120px}.cont-section-title::before{left:0}.cont-section-title::after{right:0}.cont-section-title{font-size:1.5rem;font-weight:600;margin:20px 0 30px;display:flex;align-items:center;justify-content:center;gap:10px}.cont-section-title::after,.cont-section-title::before{content:"";flex:1;height:1px;background-color:#3d3d3d}.education-container{display:flex;flex-direction:column;gap:30px;margin-top:20px;position:relative}.education-container::before{content:'';position:absolute;left:21px;top:50px;bottom:50px;width:2px;background:linear-gradient(180deg,#444,#666);border-radius:2px;z-index:0}.education-item{display:flex;align-items:center;gap:24px;position:relative;z-index:1}.edu-marker{width:44px;height:44px;background:#0a0a0a;border:2px solid #3d3d3d;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .2s,background .2s;box-shadow:0 0 0 3px #00000055,0 4px 12px #000}.education-item:hover .edu-marker{border-color:#6a6a6a;background:#151515}.edu-marker svg{width:22px;height:22px;fill:#aaa;transition:fill .2s}.education-item:hover .edu-marker svg{fill:#fff}.edu-card{background-color:#0a0a0a;border:1px solid #222;border-radius:12px;padding:22px 26px;flex:1;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 14px rgb(0 0 0 / .6)}.edu-card:hover{border-color:#4a4a4a;transform:translateY(-2px);box-shadow:0 12px 24px rgb(0 0 0 / .8)}.edu-card h3{margin:0 0 8px;font-size:1.3rem;font-weight:500;color:#fff}.edu-card .edu-desc{margin:0 0 14px;color:#bbb;line-height:1.5;font-size:.95rem}.edu-card .edu-duration{display:inline-block;background:#151515;color:#ccc;padding:5px 18px;border-radius:30px;font-size:.8rem;border:1px solid #2d2d2d}@media (max-width:600px){.bubble-section3{justify-content:center}
-.bubble-section3 .buttons1{min-width:100px;max-width:120px}.education-container::before{left:18px;top:45px;bottom:45px}.edu-marker{width:38px;height:38px}.edu-marker svg{width:18px;height:18px}.edu-card{padding:16px 18px}.edu-card h3{font-size:1.1rem}}
-.card{display:flex;text-decoration:none;color:inherit;}
-
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap);.nav-links a:hover,body{color:var(--text)}#hero,body{min-height:100vh}.hero-tag,.nav-links a{font-family:var(--mono);text-transform:uppercase}#hero,.hero-tag,.lang-btns,.nav-links,nav{display:flex}.hero-name,.thm-val{-webkit-text-fill-color:transparent}.cert-date,.exp-period,.ncsf-item,.ncsf-label{white-space:nowrap}.certs-list,.link-item,.links-stack,.projects-grid,.thm-grid{overflow:hidden}:root{--bg:#060608;--bg2:#0d0d10;--surface:#111115;--surface2:#18181e;--border:#222228;--border2:#2e2e38;--text:#e8e8f0;--muted:#7a7a8c;--accent:#7c6fcd;--accent2:#5af0c4;--accent3:#f05a7c;--mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif}*,::after,::before{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--bg);overflow-x:hidden}body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");opacity:.4;pointer-events:none;z-index:9999}.orb,body::before{pointer-events:none;z-index:0;position:fixed}body::before{content:'';inset:0;background-image:linear-gradient(rgba(124,111,205,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,111,205,.04) 1px,transparent 1px);background-size:60px 60px}.orb{border-radius:50%;filter:blur(100px)}.orb-1{width:600px;height:600px;top:-200px;left:-200px;background:radial-gradient(circle,rgba(124,111,205,.12),transparent 70%);animation:8s ease-in-out infinite orbFloat}.orb-2{width:500px;height:500px;bottom:-150px;right:-150px;background:radial-gradient(circle,rgba(90,240,196,.08),transparent 70%);animation:11s ease-in-out infinite reverse orbFloat}@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,20px)}}.progress-bar{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:10000;transition:width .1s ease-out}.cert-item,.edu-item,.edu-timeline,.proj-card,.wrapper{position:relative}nav{position:fixed;top:0;left:0;right:0;z-index:1000;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(6,6,8,.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:.85rem;color:var(--accent2);letter-spacing:.05em}.lang-btn,.nav-links a,.nav-logo span{color:var(--muted)}.nav-links{gap:32px;list-style:none}.nav-links a{font-size:.75rem;text-decoration:none;letter-spacing:.1em;transition:color .2s}.lang-btns{gap:4px}.lang-btn{font-family:var(--mono);font-size:.7rem;background:0 0;border:1px solid var(--border);padding:4px 10px;border-radius:3px;cursor:pointer;transition:.2s}.btn-secondary:hover,.lang-btn.active{border-color:var(--accent);color:var(--accent)}.wrapper{z-index:1;max-width:960px;margin:0 auto;padding:0 32px}#hero{flex-direction:column;justify-content:center;padding-top:80px}.hero-tag{font-size:.75rem;color:var(--accent2);letter-spacing:.15em;margin-bottom:20px;align-items:center;gap:10px}.hero-tag::before{content:'';width:40px;height:1px;background:var(--accent2)}.hero-name{font-size:clamp(3rem, 8vw, 6rem);font-weight:800;line-height:.95;letter-spacing:-.03em;margin-bottom:10px;background:linear-gradient(135deg,#fff 0,#c8c8e8 60%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text}.hero-handle,.hero-quote{font-family:var(--mono);color:var(--muted);margin-bottom:30px}.hero-handle{font-size:1rem}.hero-handle .at{color:var(--accent)}.hero-quote{font-size:.85rem;border-left:2px solid var(--accent);padding-left:16px;font-style:italic}.hero-desc{max-width:540px;font-size:1.05rem;line-height:1.7;color:#b0b0c8;margin-bottom:40px}.hero-cycle{display:inline;color:var(--accent2)}.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:60px}.btn-primary,.btn-secondary{font-size:.8rem;letter-spacing:.08em;padding:12px 28px;cursor:pointer;transition:.2s;display:inline-block;font-family:var(--mono);text-transform:uppercase;text-decoration:none}.btn-primary{background:var(--accent);color:#fff;border:none;border-radius:4px}.btn-primary:hover{background:#9080e0;transform:translateY(-1px)}.btn-secondary{background:0 0;color:var(--text);border:1px solid var(--border2);border-radius:4px}.cert-item,.proj-card,.thm-stat{transition:background .2s}.hero-meta{display:flex;gap:24px;flex-wrap:wrap}.meta-pill{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:6px;letter-spacing:.05em}.ncsf-label,.section-num{font-family:var(--mono);letter-spacing:.1em}.meta-pill svg{opacity:.6}.ncsf-strip{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 24px;margin:40px 0 80px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.ncsf-label{font-size:.7rem;color:var(--muted);text-transform:uppercase}.ncsf-items{display:flex;gap:0;flex-wrap:wrap;flex:1}.ncsf-item{font-family:var(--mono);font-size:.75rem;padding:4px 14px;color:var(--accent2);border:1px solid rgba(90,240,196,.2);background:rgba(90,240,196,.05);border-radius:2px;margin:2px}.section-header{margin-bottom:40px;display:flex;align-items:baseline;gap:16px}.section-num{font-size:.7rem;color:var(--accent)}.section-title{font-size:1.6rem;font-weight:700;letter-spacing:-.02em}.section-line{flex:1;height:1px;background:var(--border)}#certs,#contact,#education,#experience,#projects,#thm{padding:80px 0}.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px}.proj-card{background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit}.proj-icon,.proj-lang{background:var(--surface2)}.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity .2s}.cert-item:hover,.link-item:hover,.proj-card:hover,.thm-stat:hover{background:var(--surface)}.proj-card:hover::before{opacity:1}.proj-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:4px}.proj-name{font-size:1rem;font-weight:600;color:var(--text)}.proj-desc{font-size:.85rem;color:var(--muted);line-height:1.6;flex:1}.proj-lang,.proj-star{font-size:.65rem;color:var(--muted);font-family:var(--mono)}.proj-langs{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}.proj-lang{padding:3px 8px;border-radius:3px;border:1px solid var(--border)}.proj-lang.php{border-color:rgba(119,123,180,.4);color:#7b7fb4}.proj-lang.python{border-color:rgba(255,212,59,.3);color:#c9a700}.proj-lang.shell{border-color:rgba(90,240,196,.3);color:var(--accent2)}.proj-lang.cpp{border-color:rgba(240,90,124,.3);color:var(--accent3)}.proj-lang.css{border-color:rgba(70,130,235,.3);color:#4682eb}.proj-star{margin-top:auto;display:flex;align-items:center;gap:4px}.certs-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:8px}.cert-item{display:flex;align-items:flex-start;gap:20px;padding:20px 24px;border-bottom:1px solid var(--border);text-decoration:none;color:inherit}.cert-item:last-child,.link-item:last-child{border-bottom:none}.cert-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}.cert-dot.cisco{background:#1ba0d7}.cert-dot.thm{background:#1db954}.cert-dot.codered{background:var(--accent3)}.cert-dot.csccc{background:#f5a623}.cert-body,.link-text{flex:1}.cert-name{font-size:.95rem;font-weight:600;margin-bottom:2px}.cert-issuer{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:4px}.cert-id{font-family:var(--mono);font-size:.65rem;color:var(--border2)}.cert-date{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-align:right;flex-shrink:0}.thm-stat,footer{text-align:center}.cert-badge{font-family:var(--mono);font-size:.6rem;padding:2px 8px;border-radius:2px;background:rgba(90,240,196,.1);border:1px solid rgba(90,240,196,.2);color:var(--accent2);margin-top:4px;display:inline-block}.thm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px}.thm-stat{background:var(--bg);padding:32px 20px}.thm-val{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;margin-bottom:6px;font-family:var(--mono)}.thm-label{font-family:var(--mono);font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.edu-timeline{padding-left:40px}.edu-timeline::before{content:'';position:absolute;left:10px;top:10px;bottom:10px;width:1px;background:linear-gradient(180deg,var(--accent),var(--border))}.edu-item{margin-bottom:32px}.edu-item:last-child{margin-bottom:0}.edu-dot{position:absolute;left:-35px;top:8px;width:12px;height:12px;background:var(--accent);border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 3px var(--accent),0 0 12px rgba(124,111,205,.4)}.exp-bullets li,.link-item,footer{position:relative}.edu-card,.edu-skill{border:1px solid var(--border)}.edu-card{background:var(--surface);border-radius:8px;padding:22px 24px;transition:border-color .2s}.edu-card:hover{border-color:var(--border2)}.edu-school{font-size:1rem;font-weight:600;margin-bottom:4px}.edu-degree{font-size:.85rem;color:var(--muted);margin-bottom:10px}.edu-period{font-family:var(--mono);font-size:.72rem;color:var(--accent);background:rgba(124,111,205,.1);border:1px solid rgba(124,111,205,.2);padding:3px 10px;border-radius:3px;display:inline-block}.edu-skill,.exp-company{color:var(--muted);font-family:var(--mono)}.edu-skills{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.edu-skill{font-size:.65rem;background:var(--surface2);padding:2px 8px;border-radius:3px}.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px}.exp-header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:16px}.exp-role{font-size:1.1rem;font-weight:600}.exp-company{font-size:.75rem;margin-top:2px}.exp-period{font-family:var(--mono);font-size:.72rem;color:var(--accent2);background:rgba(90,240,196,.08);border:1px solid rgba(90,240,196,.15);padding:4px 12px;border-radius:3px}.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}.exp-bullets li{font-size:.875rem;color:#9a9aac;padding-left:16px;line-height:1.6}.exp-bullets li::before{content:'▹';position:absolute;left:0;color:var(--accent2)}.links-stack{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:8px;max-width:560px}.link-icon,.link-item{align-items:center;display:flex}.link-item{gap:16px;padding:18px 24px;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:background .15s}.link-item::after{content:'→';position:absolute;right:24px;font-size:.9rem;color:var(--muted);transition:.2s}.link-item:hover::after{right:20px;color:var(--accent2)}.link-icon{width:36px;height:36px;justify-content:center;background:var(--surface2);border-radius:6px;flex-shrink:0}.link-name{font-size:.9rem;font-weight:600}.link-url{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:1px}footer{z-index:1;border-top:1px solid var(--border);padding:32px}.footer-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.footer-name{font-family:var(--mono);font-size:.75rem;color:var(--muted)}.footer-copy{font-family:var(--mono);font-size:.72rem;color:var(--border2)}@media (max-width:700px){.cert-item,.exp-header,.ncsf-strip{flex-direction:column}nav{padding:14px 20px}.nav-links{display:none}.wrapper{padding:0 20px}.hero-name{font-size:clamp(2.5rem, 12vw, 4rem)}.projects-grid{grid-template-columns:1fr}.thm-grid{grid-template-columns:repeat(2,1fr)}.cert-item{gap:8px}.cert-date{text-align:left}.footer-inner{flex-direction:column;text-align:center}}.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}.reveal.visible{opacity:1;transform:translateY(0)}@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}.cursor{display:inline-block;width:2px;height:1em;background:var(--accent2);animation:1s step-end infinite blink;vertical-align:middle;margin-left:2px}
 </style>
 </head>
 <body>
-<div class="orb"></div><div class="orb2"></div>
-<div class="progress-wrapper">
-    <div class="progress-indicator top-indicator"><div class="vertical-line"></div><div class="horizontal-line"></div></div>
-    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-indicator bottom-indicator"><div class="vertical-line"></div><div class="horizontal-line"></div></div>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>~/</span>janvsec</div>
+  <ul class="nav-links">
+    <li><a href="#projects" data-key="nav.projects">PROJECTS</a></li>
+    <li><a href="#certs" data-key="nav.certs">CERTS</a></li>
+    <li><a href="#thm" data-key="nav.thm">TRYHACKME</a></li>
+    <li><a href="#education" data-key="nav.edu">EDUCATION</a></li>
+    <li><a href="#contact" data-key="nav.contact">CONTACT</a></li>
+  </ul>
+  <div class="lang-btns">
+    <button class="lang-btn" id="enBtn">EN</button>
+    <button class="lang-btn active" id="skBtn">SK</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="wrapper">
+  <section id="hero">
+    <div class="hero-tag" data-key="hero.tag">Kybernetická bezpečnosť</div>
+    <h1 class="hero-name">JÁN<br>VOJVODA</h1>
+    <div class="hero-handle"><span class="at">@</span>janvsec · he/him</div>
+    <div class="hero-quote" data-key="hero.quote">"The biggest vulnerability is human."</div>
+    <p class="hero-desc" data-key="hero.desc">
+      Študent zo Slovenska s vášňou pre kybernetickú bezpečnosť. Milujem zistiť, ako veci fungujú — a ako ich možno zabezpečiť alebo zneužiť. Pracujem na TryHackMe SEC1 certifikáte.<span class="cursor"></span>
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary" data-key="hero.btnContact">Kontakt</a>
+      <a href="#certs" class="btn-secondary" data-key="hero.btnCerts">Osvedčenia</a>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-pill">
+        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span data-key="meta.location">Dolný Kubín, Slovakia</span>
+      </div>
+      <div class="meta-pill">
+        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>UTC +02:00</span>
+      </div>
+      <div class="meta-pill">
+        <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        <span data-key="meta.status">TOP 5% TryHackMe</span>
+      </div>
+      <div class="meta-pill">
+        <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M9 11.5l3-3 3 3"/><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+        <span data-key="meta.repos">17 GitHub repozitárov</span>
+      </div>
+    </div>
+
+    <!-- NCSF -->
+    <div class="ncsf-strip reveal">
+      <div class="ncsf-label">NCSF ⚡</div>
+      <div class="ncsf-items">
+        <div class="ncsf-item" data-key="ncsf.1">Identifikovať</div>
+        <div class="ncsf-item" data-key="ncsf.2">Chrániť</div>
+        <div class="ncsf-item" data-key="ncsf.3">Detekovať</div>
+        <div class="ncsf-item" data-key="ncsf.4">Reagovať</div>
+        <div class="ncsf-item" data-key="ncsf.5">Obnoviť</div>
+        <div class="ncsf-item" data-key="ncsf.6">Opakovať 🔁</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title" data-key="sec.projects">Projekty</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid reveal">
+      <a href="https://github.com/janvsec/BashPhising" target="_blank" class="proj-card">
+        <div class="proj-icon">🎣</div>
+        <div class="proj-name">BashPhishing</div>
+        <div class="proj-desc" data-key="proj.1.desc">Jednoduchý, ale funkčný príklad phishingového útoku na localhoste — vzdelávací projekt.</div>
+        <div class="proj-langs">
+          <span class="proj-lang php">PHP</span>
+          <span class="proj-lang shell">Bash</span>
+        </div>
+        <div class="proj-star">★ 1 &nbsp;·&nbsp; github.com/janvsec</div>
+      </a>
+      <a href="https://github.com/janvsec/IPTracker" target="_blank" class="proj-card">
+        <div class="proj-icon">🌐</div>
+        <div class="proj-name">IPTracker</div>
+        <div class="proj-desc" data-key="proj.2.desc">Rýchly nástroj na získanie verejných informácií o ľubovoľnej IP adrese cez ipapi.co.</div>
+        <div class="proj-langs">
+          <span class="proj-lang css">HTML</span>
+          <span class="proj-lang css">JS</span>
+        </div>
+        <div class="proj-star">★ 1</div>
+      </a>
+      <a href="https://github.com/janvsec/ReverseShell" target="_blank" class="proj-card">
+        <div class="proj-icon">🔁</div>
+        <div class="proj-name">ReverseShell</div>
+        <div class="proj-desc" data-key="proj.3.desc">Dokumentácia implementácií reverzného shellu vo viacerých jazykoch + detekcia a prevencia.</div>
+        <div class="proj-langs">
+          <span class="proj-lang python">Python</span>
+          <span class="proj-lang shell">Bash</span>
+        </div>
+        <div class="proj-star">★ 1</div>
+      </a>
+      <a href="https://github.com/janvsec/Wordgen" target="_blank" class="proj-card">
+        <div class="proj-icon">📋</div>
+        <div class="proj-name">Wordgen</div>
+        <div class="proj-desc" data-key="proj.4.desc">Rýchly a praktický generátor slovníkov pre penetračné testovanie.</div>
+        <div class="proj-langs">
+          <span class="proj-lang shell">Shell</span>
+        </div>
+        <div class="proj-star">★ 1</div>
+      </a>
+      <a href="https://github.com/janvsec/TripwireESP" target="_blank" class="proj-card">
+        <div class="proj-icon">📡</div>
+        <div class="proj-name">TripwireESP</div>
+        <div class="proj-desc" data-key="proj.5.desc">ESP32 systém monitorovania tripwire prepojený s webovým API — fyzická bezpečnosť.</div>
+        <div class="proj-langs">
+          <span class="proj-lang cpp">C++</span>
+        </div>
+        <div class="proj-star">★ 1</div>
+      </a>
+      <a href="https://github.com/janvsec/Netscan" target="_blank" class="proj-card">
+        <div class="proj-icon">🔍</div>
+        <div class="proj-name">Netscan</div>
+        <div class="proj-desc" data-key="proj.6.desc">Sieťový skener pre objavovanie zariadení v podsieti — rýchly a ľahký.</div>
+        <div class="proj-langs">
+          <span class="proj-lang python">Python</span>
+        </div>
+        <div class="proj-star">★ 1</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CERTS -->
+  <section id="certs">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title" data-key="sec.certs">Osvedčenia</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="certs-list reveal">
+      <a href="https://learn.eccouncil.org/certificate/39134650-6e33-4ab5-8712-aa5c960e0b1c" target="_blank" class="cert-item">
+        <div class="cert-dot codered"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.1.name">SQL Injection Attacks</div>
+          <div class="cert-issuer">CodeRed · EC-Council</div>
+          <div class="cert-id">ID: 488936</div>
+        </div>
+        <div class="cert-date">Apr 2026</div>
+      </a>
+      <a href="https://assets.tryhackme.com/certification-certificate/69cf52d55b60a88203617fbe.pdf" target="_blank" class="cert-item">
+        <div class="cert-dot thm"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.2.name">Pre Security (SEC0) Certificate</div>
+          <div class="cert-issuer">TryHackMe</div>
+          <div class="cert-id">ID: 69cf52d55b60a88203617fbe</div>
+          <div class="cert-badge" data-key="cert.2.badge">Expires Apr 2029</div>
+        </div>
+        <div class="cert-date">Apr 2026</div>
+      </a>
+      <a href="https://www.credly.com/badges/71bd2f8b-c98c-4330-8afd-d83930edb7f5/public_url" target="_blank" class="cert-item">
+        <div class="cert-dot cisco"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.3.name">Junior Cybersecurity Analyst Career Path</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+        </div>
+        <div class="cert-date">Mar 2026</div>
+      </a>
+      <a href="https://www.credly.com/earner/earned/badge/fd2c9bda-4741-497f-813d-8869a6fc8ed4" target="_blank" class="cert-item">
+        <div class="cert-dot cisco"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.4.name">Cyber Threat Management</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+        </div>
+        <div class="cert-date">Mar 2026</div>
+      </a>
+      <div class="cert-item">
+        <div class="cert-dot csccc"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.5.name">Manažér Kybernetickej Bezpečnosti 1</div>
+          <div class="cert-issuer">Cyber Security Competence and Certification Centre</div>
+          <div class="cert-id">ID: MKB/1865/2026</div>
+        </div>
+        <div class="cert-date">Mar 2026</div>
+      </div>
+      <a href="https://www.credly.com/badges/01651de8-746f-4649-82b2-27b386759e6b/public_url" target="_blank" class="cert-item">
+        <div class="cert-dot cisco"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.6.name">Ethical Hacker</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+          <div class="cert-badge" data-key="cert.6.badge">Ethical Hacking · Penetration Testing</div>
+        </div>
+        <div class="cert-date">Feb 2026</div>
+      </a>
+      <a href="https://www.credly.com/badges/4d18ce3d-4242-4484-9f5c-628442143b32/public_url" target="_blank" class="cert-item">
+        <div class="cert-dot cisco"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.7.name">Introduction to Cybersecurity</div>
+          <div class="cert-issuer">Cisco Networking Academy</div>
+        </div>
+        <div class="cert-date">Feb 2026</div>
+      </a>
+      <div class="cert-item">
+        <div class="cert-dot csccc"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.8.name">Riadenie Kybernetických Bezpečnostných Incidentov</div>
+          <div class="cert-issuer">Cyber Security Competence and Certification Centre</div>
+          <div class="cert-id">ID: RKBI/1744/2025</div>
+        </div>
+        <div class="cert-date">Aug 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot csccc"></div>
+        <div class="cert-body">
+          <div class="cert-name" data-key="cert.9.name">Základy Kybernetickej Bezpečnosti</div>
+          <div class="cert-issuer">Cyber Security Competence and Certification Centre</div>
+          <div class="cert-id">ID: ZKL/1533/2024</div>
+        </div>
+        <div class="cert-date">Nov 2024</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THM STATS -->
+  <section id="thm">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title" data-key="sec.thm">TryHackMe Štatistiky</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="thm-grid reveal">
+      <div class="thm-stat">
+        <div class="thm-val" data-key="thm.1.val">TOP 5%</div>
+        <div class="thm-label" data-key="thm.1.label">Umiestnenie</div>
+      </div>
+      <div class="thm-stat">
+        <div class="thm-val" data-key="thm.2.val">100+</div>
+        <div class="thm-label" data-key="thm.2.label">Dokončené miestnosti</div>
+      </div>
+      <div class="thm-stat">
+        <div class="thm-val" data-key="thm.3.val">5</div>
+        <div class="thm-label" data-key="thm.3.label">Odznaky</div>
+      </div>
+      <div class="thm-stat">
+        <div class="thm-val" data-key="thm.4.val">35+</div>
+        <div class="thm-label" data-key="thm.4.label">Dní v rade</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title" data-key="sec.edu">Vzdelanie</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-timeline reveal">
+      <div class="edu-item">
+        <div class="edu-dot"></div>
+        <div class="edu-card">
+          <div class="edu-school" data-key="edu.1.school">Cirkevná spojená škola Dolný Kubín</div>
+          <div class="edu-degree" data-key="edu.1.degree">Informačné technológie</div>
+          <span class="edu-period">2023 – 2027</span>
+          <div class="edu-skills">
+            <span class="edu-skill">Microsoft Office</span>
+            <span class="edu-skill">Information Technology</span>
+            <span class="edu-skill">Cybersecurity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title" data-key="sec.exp">Skúsenosti</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="exp-card reveal">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role" data-key="exp.1.role">IT Support</div>
+          <div class="exp-company">PARTNER ASISTENT, s.r.o. · <span data-key="exp.1.type">Part-time · Hybrid</span></div>
+        </div>
+        <div class="exp-period" data-key="exp.1.period">Jul 2024 – súčasnosť</div>
+      </div>
+      <ul class="exp-bullets">
+        <li data-key="exp.1.b1">Základná IT podpora pre zariadenia Windows a macOS</li>
+        <li data-key="exp.1.b2">Diagnostika a riešenie hardvérových a softvérových problémov</li>
+        <li data-key="exp.1.b3">Správa a aktualizácia obsahu webovej stránky spoločnosti</li>
+        <li data-key="exp.1.b4">Vývoj jednoduchého online systému na sledovanie financií</li>
+        <li data-key="exp.1.b5">Identifikácia pokusov o phishing a bežných bezpečnostných rizík</li>
+        <li data-key="exp.1.b6">Podpora pri základnom nastavení a údržbe hardvéru</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <span class="section-num">06</span>
+      <h2 class="section-title" data-key="sec.contact">Kontakt</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="links-stack reveal">
+      <a href="https://www.linkedin.com/in/janvojvoda/" target="_blank" class="link-item">
+        <div class="link-icon">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">LinkedIn</div>
+          <div class="link-url">linkedin.com/in/janvojvoda</div>
+        </div>
+      </a>
+      <a href="https://github.com/janvsec" target="_blank" class="link-item">
+        <div class="link-icon">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">GitHub</div>
+          <div class="link-url">github.com/janvsec · 17 repos · 172 contributions</div>
+        </div>
+      </a>
+      <a href="https://tryhackme.com/p/janvojvoda" target="_blank" class="link-item">
+        <div class="link-icon" style="font-size:1rem;">🔓</div>
+        <div class="link-text">
+          <div class="link-name">TryHackMe</div>
+          <div class="link-url">tryhackme.com/p/janvojvoda · TOP 5%</div>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/janvsec" target="_blank" class="link-item">
+        <div class="link-icon">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">Instagram</div>
+          <div class="link-url">instagram.com/janvsec</div>
+        </div>
+      </a>
+      <a href="mailto:mailjanvojvoda@gmail.com" class="link-item">
+        <div class="link-icon">
+          <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="link-text">
+          <div class="link-name">Email</div>
+          <div class="link-url">mailjanvojvoda@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </section>
 </div>
-<div class="corner top-right">+</div>
-<div class="header">
-    <div class="lang-switch"><button id="skBtn" class="active">SK</button><button id="enBtn">EN</button></div>
-    <div class="subtitle-container"><div class="subtitle" data-key="sec0.subtitle">DEFAULT_TEXT</div><div class="line-inline"></div></div>
-    <div class="title" data-key="sec0.title">DEFAULT_TEXT</div>
-    <div class="nav-container">
-        <button data-key="nav.text1" onclick="document.getElementById('section1').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
-        <button data-key="nav.text2" onclick="document.getElementById('section2').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
-        <button data-key="nav.text3" onclick="document.getElementById('section3').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
-    </div>
-    <div class="line"></div>
-</div>
-<section id="section0" class="section0">
-    <div class="section-title" data-key="sec0.sectionTitle">DEFAULT_TEXT</div>
-    <div class="subtitle" data-key="sec0.subtitle2">DEFAULT_TEXT</div>
-    <div class="desc" data-key="sec0.desc">DEFAULT_TEXT</div>
-    <div class="section-buttons">
-        <button class="btn-white" data-key="sec0.btnWhite" onclick="document.getElementById('section2').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
-        <button class="btn-link" data-key="sec0.btnLink" onclick="document.getElementById('section2').scrollIntoView({behavior:'smooth'})">DEFAULT_TEXT</button>
-    </div>
-</section>
-<div class="grid-section"></div>
-<section id="section1">
-    <div class="section-title" data-key="sec1.title">DEFAULT_TEXT</div>
-<div class="bubble-section">
-    <a href="#" class="card">
-        <h3 data-key="sec1.card1Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card1Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card1Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card1Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
 
-    <a href="#" class="card">
-        <h3 data-key="sec1.card2Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card2Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card2Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card2Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
-
-    <a href="#" class="card">
-        <h3 data-key="sec1.card3Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card3Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card3Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card3Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
-
-    <a href="#" class="card">
-        <h3 data-key="sec1.card4Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card4Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card4Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card4Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
-
-    <a href="#" class="card">
-        <h3 data-key="sec1.card5Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card5Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card5Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card5Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
-
-    <a href="#" class="card">
-        <h3 data-key="sec1.card6Title">DEFAULT_TEXT</h3>
-        <p data-key="sec1.card6Desc">DEFAULT_TEXT</p>
-        <div class="skill-tags">
-            <span class="skill-tag" data-key="sec1.card6Skill1">DEFAULT_SKILL</span>
-            <span class="skill-tag" data-key="sec1.card6Skill2">DEFAULT_SKILL</span>
-        </div>
-    </a>
-</div>
-    <div class="grid-section2"></div>
-</section>
-<section id="section2">
-    <div class="section-title" data-key="sec2.title" style="margin-top:50px;">DEFAULT_TEXT</div>
-    <div class="bubble-section">
-        <div class="card" style="background:#000;background:linear-gradient(344deg,#020202 0%,#0a0a0a 35%,#0a0a0a 100%);"><div class="trophy-row"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/></svg><span class="code-label" data-key="sec2.card1Code">DEFAULT</span></div><h3 data-key="sec2.card1Title">DEFAULT_TEXT</h3><p data-key="sec2.card1Desc">DEFAULT_TEXT</p><div class="line2"></div><div class="info-row labels"><span data-key="sec2.card1Completed">Completed:</span><span data-key="sec2.card1Duration">Duration:</span></div><div class="info-row values"><span data-key="sec2.card1CompletedAnsw">Default</span><span data-key="sec2.card1DurationdAnsw">Default</span></div></div>
-        <div class="card" style="background:#000;background:linear-gradient(344deg,#020202 0%,#0a0a0a 35%,#0a0a0a 100%);"><div class="trophy-row"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/></svg><span class="code-label" data-key="sec2.card2Code">DEFAULT</span></div><h3 data-key="sec2.card2Title">DEFAULT_TEXT</h3><p data-key="sec2.card2Desc">DEFAULT_TEXT</p><div class="line2"></div><div class="info-row labels"><span data-key="sec2.card1Completed">Completed:</span><span data-key="sec2.card1Duration">Duration:</span></div><div class="info-row values"><span data-key="sec2.card2CompletedAnsw">Default</span><span data-key="sec2.card2DurationdAnsw">Default</span></div></div>
-    </div>
-</section>
-<div class="grid-section3"></div>
-<section id="section2_5">
-    <div class="section-title" data-key="sec2_5.title">EDUCATION</div>
-    <div class="education-container">
-        <div class="education-item">
-            <div class="edu-marker">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 73.27"><path fill-rule="evenodd" d="M104.27 58.88l-.54-19.99-32.85 9.49c-2.96.65-5.88.96-8.74.97-3.07.01-6.09-.32-9.06-.97L21.7 38.79v20.27c.9 10.53 31.11 13.75 40.38 14.19 7.43.36 36.78-3.52 40.64-9.57 1.83-2.32 2.35-3.92 2.55-5.8zm13.31-34.38v24.43h.77c.53 0 .96.43.96.96v6.57c0 .52-.43.96-.96.96h-.77v2.3c.98.18 1.73 1.05 1.73 2.08 0 1.16-.96 2.12-2.12 2.12h-3.79c-1.16 0-2.12-.95-2.12-2.12 0-1.03.75-1.9 1.73-2.08v-2.3h-.77c-.52 0-.96-.43-.96-.96v-6.57c0-.53.43-.96.96-.96h.77v-23L73.03 38.35c-7.24 1.72-14.48 1.84-21.72 0L7.18 25.18l-3.99-1.19c-4.97-2.03-3.73-6.8.9-7.9L54 1.19c5.15-1.47 10.29-1.7 15.44 0l49.01 14.72c5.33 1.3 6.38 6.23.18 8.26l-1.05.33z"/></svg>
-
-            </div>
-            <div class="edu-card">
-                <h3 data-key="sec2_5.edu1School">DEFAULT_TEXT</h3>
-                <p class="edu-desc" data-key="sec2_5.edu1Desc">DEFAULT_TEXT</p>
-                <span class="edu-duration" data-key="sec2_5.edu1Duration">DEFAULT_TEXT</span>
-            </div>
-        </div>
-        <div class="education-item">
-            <div class="edu-marker">
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 73.27"><path fill-rule="evenodd" d="M104.27 58.88l-.54-19.99-32.85 9.49c-2.96.65-5.88.96-8.74.97-3.07.01-6.09-.32-9.06-.97L21.7 38.79v20.27c.9 10.53 31.11 13.75 40.38 14.19 7.43.36 36.78-3.52 40.64-9.57 1.83-2.32 2.35-3.92 2.55-5.8zm13.31-34.38v24.43h.77c.53 0 .96.43.96.96v6.57c0 .52-.43.96-.96.96h-.77v2.3c.98.18 1.73 1.05 1.73 2.08 0 1.16-.96 2.12-2.12 2.12h-3.79c-1.16 0-2.12-.95-2.12-2.12 0-1.03.75-1.9 1.73-2.08v-2.3h-.77c-.52 0-.96-.43-.96-.96v-6.57c0-.53.43-.96.96-.96h.77v-23L73.03 38.35c-7.24 1.72-14.48 1.84-21.72 0L7.18 25.18l-3.99-1.19c-4.97-2.03-3.73-6.8.9-7.9L54 1.19c5.15-1.47 10.29-1.7 15.44 0l49.01 14.72c5.33 1.3 6.38 6.23.18 8.26l-1.05.33z"/></svg>
-            </div>
-            <div class="edu-card">
-                <h3 data-key="sec2_5.edu2School">DEFAULT_TEXT</h3>
-                <p class="edu-desc" data-key="sec2_5.edu2Desc">DEFAULT_TEXT</p>
-                <span class="edu-duration" data-key="sec2_5.edu2Duration">DEFAULT_TEXT</span>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Experimentation -->
-<style>.thm-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-@media (max-width: 650px) {
-    .thm-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 400px) {
-    .thm-stats-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .thm-stats-grid .card {
-        min-height: auto;
-        padding: 20px;
-    }
-}</style>
-<section id="section2_7">
-    <div class="section-title" data-key="sec2_7.title">TRYHACKME STATS</div>
-    <div class="thm-stats-grid">
-        <div class="card" style="text-align: center; justify-content: center; align-items: center; background: linear-gradient(344deg, #020202 0%, #0a0a0a 35%, #0a0a0a 100%);">
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;" data-key="sec2_7.stat1Value">0</div>
-            <div style="font-size: 0.9rem; color: #aaa;" data-key="sec2_7.stat1Label">Rank</div>
-        </div>
-        <div class="card" style="text-align: center; justify-content: center; align-items: center; background: linear-gradient(344deg, #020202 0%, #0a0a0a 35%, #0a0a0a 100%);">
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;" data-key="sec2_7.stat2Value">0</div>
-            <div style="font-size: 0.9rem; color: #aaa;" data-key="sec2_7.stat2Label">Rooms Completed</div>
-        </div>
-        <div class="card" style="text-align: center; justify-content: center; align-items: center; background: linear-gradient(344deg, #020202 0%, #0a0a0a 35%, #0a0a0a 100%);">
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;" data-key="sec2_7.stat3Value">0</div>
-            <div style="font-size: 0.9rem; color: #aaa;" data-key="sec2_7.stat3Label">Badges</div>
-        </div>
-        <div class="card" style="text-align: center; justify-content: center; align-items: center; background: linear-gradient(344deg, #020202 0%, #0a0a0a 35%, #0a0a0a 100%);">
-            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;" data-key="sec2_7.stat4Value">0</div>
-            <div style="font-size: 0.9rem; color: #aaa;" data-key="sec2_7.stat4Label">Streak Days</div>
-        </div>
-    </div>
-</section>
-
-<section id="section3"><div class="cont-section-title" data-key="sec3.title">DEFAULT_TEXT</div></section>
-<section id="section-links">
-    <div class="stacked-cards">
-        <a href="https://www.linkedin.com/in/janvsec" class="stack-card"><div class="stack-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div class="stack-text">LinkedIn</div><div class="stack-action">></div></a><div class="line3"></div>
-        <a href="https://github.com/janvsec" class="stack-card"><div class="stack-icon"><svg fill="white" width="28" height="28" viewBox="-2 -2 24 24"><path d="M18.88 1.099C18.147.366 17.265 0 16.233 0H3.746C2.714 0 1.832.366 1.099 1.099.366 1.832 0 2.714 0 3.746v12.487c0 1.032.366 1.914 1.099 2.647.733.733 1.615 1.099 2.647 1.099H6.66c.19 0 .333-.007.429-.02a.504.504 0 0 0 .286-.169c.095-.1.143-.245.143-.435l-.007-.885c-.004-.564-.006-1.01-.006-1.34l-.3.052c-.19.035-.43.05-.721.046a5.555 5.555 0 0 1-.904-.091 2.026 2.026 0 0 1-.872-.39 1.651 1.651 0 0 1-.572-.8l-.13-.3a3.25 3.25 0 0 0-.41-.663c-.186-.243-.375-.407-.566-.494l-.09-.065a.956.956 0 0 1-.17-.156.723.723 0 0 1-.117-.182c-.026-.061-.004-.111.065-.15.07-.04.195-.059.378-.059l.26.04c.173.034.388.138.643.311a2.1 2.1 0 0 1 .631.677c.2.355.44.626.722.813.282.186.566.28.852.28.286 0 .533-.022.742-.065a2.59 2.59 0 0 0 .585-.196c.078-.58.29-1.028.637-1.34a8.907 8.907 0 0 1-1.333-.234 5.314 5.314 0 0 1-1.223-.507 3.5 3.5 0 0 1-1.047-.872c-.277-.347-.505-.802-.683-1.365-.177-.564-.266-1.215-.266-1.952 0-1.049.342-1.942 1.027-2.68-.32-.788-.29-1.673.091-2.652.252-.079.625-.02 1.119.175.494.195.856.362 1.086.5.23.14.414.257.553.352a9.233 9.233 0 0 1 2.497-.338c.859 0 1.691.113 2.498.338l.494-.312a6.997 6.997 0 0 1 1.197-.572c.46-.174.81-.221 1.054-.143.39.98.424 1.864.103 2.653.685.737 1.028 1.63 1.028 2.68 0 .737-.089 1.39-.267 1.957-.177.568-.407 1.023-.689 1.366-.282.343-.633.63-1.053.865-.42.234-.828.403-1.223.507a8.9 8.9 0 0 1-1.333.235c.45.39.676 1.005.676 1.846v3.11c0 .147.021.266.065.357a.36.36 0 0 0 .208.189c.096.034.18.056.254.064.074.01.18.013.318.013h2.914c1.032 0 1.914-.366 2.647-1.099.732-.732 1.099-1.615 1.099-2.647V3.746c0-1.032-.367-1.914-1.1-2.647z"/></svg></div><div class="stack-text">Github</div><div class="stack-action">></div></a><div class="line3"></div>
-        <a href="mailto:mailjanvojvoda@gmail.com" class="stack-card"><div class="stack-icon"><svg fill="white" width="28" height="28" viewBox="0 0 512 512"><path d="M64 128Q64 113 73 105 81 96 96 96L416 96Q431 96 440 105 448 113 448 128L448 144 256 272 64 144 64 128ZM256 328L448 200 448 384Q448 416 416 416L96 416Q64 416 64 384L64 200 256 328Z"/></svg></div><div class="stack-text">Mail</div><div class="stack-action">></div></a><div class="line3"></div>
-        <a href="https://www.instagram.com/janvsec" class="stack-card"><div class="stack-icon"><svg fill="white" width="22" height="22" viewBox="0 0 24 24"><path d="m16 12v-.001c0-2.209-1.791-4-4-4s-4 1.791-4 4 1.791 4 4 4c1.104 0 2.104-.448 2.828-1.171.723-.701 1.172-1.682 1.172-2.768 0-.021 0-.042-.001-.063v.003zm2.16 0c-.012 3.379-2.754 6.114-6.135 6.114-3.388 0-6.135-2.747-6.135-6.135s2.747-6.135 6.135-6.135c1.694 0 3.228.687 4.338 1.797 1.109 1.08 1.798 2.587 1.798 4.256 0 .036 0 .073-.001.109v-.005zm1.687-6.406v.002c0 .795-.645 1.44-1.44 1.44s-1.44-.645-1.44-1.44.645-1.44 1.44-1.44c.398 0 .758.161 1.018.422.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014c-1.044.425-1.857 1.237-2.272 2.254l-.01.027c-.119.318-.219.695-.284 1.083l-.005.037c-.082.469-.14 1.024-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043c.425 1.044 1.237 1.857 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014c1.044-.425 1.857-1.237 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073c-.07-.425-.17-.802-.303-1.163l.014.043c-.425-1.044-1.237-1.857-2.254-2.272l-.027-.01c-.318-.119-.695-.219-1.083-.284l-.037-.005c-.469-.082-1.024-.14-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0z"/></svg></div><div class="stack-text">Instagram</div><div class="stack-action">></div></a><div class="line3"></div>
-    </div>
-</section>
-<footer>© <span id="year"></span> <span data-key="footer.text">DEFAULT_TEXT</span><div class="footer-line"></div></footer>
-<pre class="ascii-footer" aria-hidden="true">
-  ▀▀       ▄                            
-  ██ ▄▀▀█▄ ████▄▀█▄ ██▀▄██▀█ ▄█▀█▄ ▄███▀
-  ██ ▄█▀██ ██ ██ ██▄██ ▀███▄ ██▄█▀ ██   
- ▄██▄▀█▄██▄██ ▀█  ▀█▀ █▄▄██▀▄▀█▄▄▄▄▀███▄
-  ██                                    
-▀▀▀                                    
-</pre>
-
-<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
- <!-- FIX EDU CARD TEXT WHEN OVER SIZE - MOBILE VERSION, FUCKS UP!! -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">~/janvsec · Ján Vojvoda</div>
+    <div class="footer-copy">© <span id="yr"></span> · Built with love and 2 brain cells</div>
+  </div>
+</footer>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-const translations = {
-    sk: {
-        "nav.text1": "PROJEKTY",
-        "nav.text2": "OSVEDČENIA",
-        "nav.text3": "KONTAKT",
-        "sec0.title": "JÁN VOJVODA",
-        "sec0.sectionTitle": "Ján Vojvoda",
-        "sec0.subtitle": "/var/www/html",
-        "sec0.subtitle2": "/home/janvsec/",
-        "sec0.desc": "Som študent na Slovensku s veľkým záujmom v Kybernetickej Bezpečnosti.",
-        "sec0.btnWhite": "Kontakt",
-        "sec0.btnLink": "Osvedčenia",
-        "sec1.title": "PROJEKTY",
-        "sec1.card1Title": "BashPhising",
-        "sec1.card1Desc": "Jednoduchý, ale účinný príklad phishingového útoku spusteného na localhoste na vzdelávacie účely",
-        "sec1.card1Skill1": "Bash",
-        "sec1.card1Skill2": "PHP",
-        "sec1.card2Title": "Keylogger",
-        "sec1.card2Desc": "Extrémne základný a jednoduchý keylogger v jazyku Python len na vzdelávacie účely",
-        "sec1.card2Skill1": "Python",
-        "sec1.card2Skill2": "Bezpečnosť",
-        "sec1.card3Title": "ReverseShell",
-        "sec1.card3Desc": "Príklady útoku Reverse-Shell na pochopenie princípu",
-        "sec1.card3Skill1": "Networking",
-        "sec1.card3Skill2": "Python",
-        "sec1.card4Title": "IPTracker",
-        "sec1.card4Desc": "Rýchly program na zistenie verejných informácií o hociakej IP Adrese",
-        "sec1.card4Skill1": "HTML",
-        "sec1.card4Skill2": "Javascript",
-        "sec1.card5Title": "Wordgen",
-        "sec1.card5Desc": "Bash kód na vytvorenie zoznamu slov podľa vašého vstupu",
-        "sec1.card5Skill1": "Linux",
-        "sec1.card5Skill2": "SHELL",
-        "sec1.card6Title": "Autoclicker",
-        "sec1.card6Desc": "Praktický a rýchly program ktorý simuluje klikanie a dokáže postupovať po dopred zaznamenánom pláne",
-        "sec1.card6Skill1": "Python",
-        "sec1.card6Skill2": "Dokumentácia",
-        "sec2.title": "OSVEDČENIA",
-        "sec2.card1Code": "MKB/1865/2026",
-        "sec2.card1Title": "Manažér Kybernetickej bezpečnosti 1",
-        "sec2.card1Desc": "Riadenie rizík, incidentov a manažmentu podľa vyhlášky NBÚ č. 492/2022",
-        "sec2.card1Completed": "Ukončený:",
-        "sec2.card1Duration": "Trvanie:",
-        "sec2.card1CompletedAnsw": "3 - 4. Marec 2026",
-        "sec2.card1DurationdAnsw": "14 Hodín",
-        "sec2.card2Code": "RKBI/1744/2025",
-        "sec2.card2Title": "Riadenie Kybernetických bezpečnostných incidentov",
-        "sec2.card2Desc": "Riešenie incidentov, koordinácia SOC, správa logov",
-        "sec2.card2CompletedAnsw": "12 - 13.8 2025",
-        "sec2.card2DurationdAnsw": "14 Hodín",
-        "sec2_5.title": "VZDELANIE",
-        "sec2_5.edu1School": "DEFAULT_SCHOOL_1",
-        "sec2_5.edu1Desc": "DEFAULT_DESC_1",
-        "sec2_5.edu1Duration": "DEFAULT_DUR_1",
-        "sec2_5.edu2School": "DEFAULT_SCHOOL_2",
-        "sec2_5.edu2Desc": "DEFAULT_DESC_2",
-        "sec2_5.edu2Duration": "DEFAULT_DUR_2",
-        "sec3.title": "KONTAKT",
-        "sec2_7.title": "TRYHACKME ŠTATISTIKY",
-"sec2_7.stat1Value": "TOP 25%",
-"sec2_7.stat1Label": "Umiestnenie",
-"sec2_7.stat2Value": "29+",
-"sec2_7.stat2Label": "Dokončené miestnosti",
-"sec2_7.stat3Value": "5",
-"sec2_7.stat3Label": "Odznaky",
-"sec2_7.stat4Value": "9+",
-"sec2_7.stat4Label": "Dní v rade",
-        "footer.text": "Ján Vojvoda"
-    },
-    en: {
-        "nav.text1": "PROJECTS",
-        "nav.text2": "CERTIFICATIONS",
-        "nav.text3": "CONTACT",
-        "sec0.title": "JÁN VOJVODA",
-        "sec0.sectionTitle": "Ján Vojvoda",
-        "sec0.subtitle": "/var/www/html",
-        "sec0.subtitle2": "/home/janvsec/",
-        "sec0.desc": "I am a student in Slovakia with a strong interest in Cybersecurity.",
-        "sec0.btnWhite": "Contact",
-        "sec0.btnLink": "Certifications",
-        "sec1.title": "PROJECTS",
-        "sec1.card1Title": "BashPhishing",
-        "sec1.card1Desc": "A simple but effective example of a phishing attack running on localhost for educational purposes",
-        "sec1.card1Skill1": "Bash",
-        "sec1.card1Skill2": "PHP",
-        "sec1.card2Title": "Keylogger",
-        "sec1.card2Desc": "An extremely basic and simple keylogger in Python for educational purposes only",
-        "sec1.card2Skill1": "Python",
-        "sec1.card2Skill2": "Security",
-        "sec1.card3Title": "ReverseShell",
-        "sec1.card3Desc": "Examples of Reverse-Shell attacks to understand the principle",
-        "sec1.card3Skill1": "Networking",
-        "sec1.card3Skill2": "Python",
-        "sec1.card4Title": "IPTracker",
-        "sec1.card4Desc": "A quick program to find public information about any IP address",
-        "sec1.card4Skill1": "HTML",
-        "sec1.card4Skill2": "Javascript",
-        "sec1.card5Title": "Wordgen",
-        "sec1.card5Desc": "Bash script that can create a list of words based on your input",
-        "sec1.card5Skill1": "Linux",
-        "sec1.card5Skill2": "SHELL",
-        "sec1.card6Title": "Autoclicker",
-        "sec1.card6Desc": "A practical and fast program that simulates clicking and can follow a pre-recorded plan",
-        "sec1.card6Skill1": "Python",
-        "sec1.card6Skill2": "Documentation",
-        "sec2.title": "CERTIFICATIONS",
-        "sec2.card1Code": "MKB/1865/2026",
-        "sec2.card1Title": "Cybersecurity Manager 1",
-        "sec2.card1Desc": "Management, risk and incident management according to NBU Decree No. 492/2022",
-        "sec2.card1Completed": "Completed:",
-        "sec2.card1Duration": "Duration:",
-        "sec2.card1CompletedAnsw": "March 3 - 4, 2026",
-        "sec2.card1DurationdAnsw": "14 Hours",
-        "sec2.card2Code": "RKBI/1744/2025",
-        "sec2.card2Title": "Cybersecurity Incident Management",
-        "sec2.card2Desc": "Incident handling, SOC coordination, log management",
-        "sec2.card2CompletedAnsw": "August 12 - 13, 2025",
-        "sec2.card2DurationdAnsw": "14 Hours",
-        "sec2_5.title": "EDUCATION",
-        "sec2_5.edu1School": "DEFAULT_SCHOOL_1",
-        "sec2_5.edu1Desc": "DEFAULT_DESC_1",
-        "sec2_5.edu1Duration": "DEFAULT_DUR_1",
-        "sec2_5.edu2School": "DEFAULT_SCHOOL_2",
-        "sec2_5.edu2Desc": "DEFAULT_DESC_2",
-        "sec2_5.edu2Duration": "DEFAULT_DUR_2",
-        "sec3.title": "CONTACT",
-        "sec2_7.title": "TRYHACKME STATS",
-"sec2_7.stat1Value": "TOP 25%",
-"sec2_7.stat1Label": "Rank",
-"sec2_7.stat2Value": "29+",
-"sec2_7.stat2Label": "Rooms Completed",
-"sec2_7.stat3Value": "5",
-"sec2_7.stat3Label": "Badges",
-"sec2_7.stat4Value": "9+",
-"sec2_7.stat4Label": "Streak Days",
-        "footer.text": "Ján Vojvoda"
-    }
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => io.observe(el));
+
+
+const T = {
+  sk: {
+    'nav.projects': 'PROJEKTY', 'nav.certs': 'OSVEDČENIA', 'nav.thm': 'TRYHACKME',
+    'nav.edu': 'VZDELANIE', 'nav.contact': 'KONTAKT',
+    'hero.tag': 'Kybernetická bezpečnosť · Slovensko',
+    'hero.quote': '"The biggest vulnerability is human."',
+    'hero.desc': 'Študent zo Slovenska s vášňou pre kybernetickú bezpečnosť. Rád zisťujem, ako veci fungujú — a ako ich možno zabezpečiť alebo zneužiť. Pracujem na TryHackMe SEC1 certifikáte.',
+    'hero.btnContact': 'Kontakt', 'hero.btnCerts': 'Osvedčenia',
+    'meta.location': 'Dolný Kubín, Slovakia', 'meta.status': 'TOP 5% TryHackMe', 'meta.repos': '17 GitHub repozitárov',
+    'ncsf.1': 'Identifikovať', 'ncsf.2': 'Chrániť', 'ncsf.3': 'Detekovať', 'ncsf.4': 'Reagovať', 'ncsf.5': 'Obnoviť', 'ncsf.6': 'Opakovať 🔁',
+    'sec.projects': 'Projekty', 'sec.certs': 'Osvedčenia', 'sec.thm': 'TryHackMe Štatistiky',
+    'sec.edu': 'Vzdelanie', 'sec.exp': 'Skúsenosti', 'sec.contact': 'Kontakt',
+    'proj.1.desc': 'Jednoduchý, ale funkčný príklad phishingového útoku na localhoste — vzdelávací projekt.',
+    'proj.2.desc': 'Rýchly nástroj na získanie verejných informácií o ľubovoľnej IP adrese cez ipapi.co.',
+    'proj.3.desc': 'Dokumentácia implementácií reverzného shellu vo viacerých jazykoch + detekcia a prevencia.',
+    'proj.4.desc': 'Rýchly a praktický generátor slovníkov pre penetračné testovanie.',
+    'proj.5.desc': 'ESP32 systém monitorovania tripwire prepojený s webovým API — fyzická bezpečnosť.',
+    'proj.6.desc': 'Sieťový skener pre objavovanie zariadení v podsieti — rýchly a ľahký.',
+    'cert.1.name': 'SQL Injection Attacks', 'cert.2.name': 'Pre Security (SEC0) Certificate',
+    'cert.2.badge': 'Platné do Apr 2029', 'cert.3.name': 'Junior Cybersecurity Analyst Career Path',
+    'cert.4.name': 'Cyber Threat Management', 'cert.5.name': 'Manažér Kybernetickej Bezpečnosti 1',
+    'cert.6.name': 'Ethical Hacker', 'cert.6.badge': 'Etický hacking · Penetračné testovanie',
+    'cert.7.name': 'Introduction to Cybersecurity', 'cert.8.name': 'Riadenie Kybernetických Bezpečnostných Incidentov',
+    'cert.9.name': 'Základy Kybernetickej Bezpečnosti',
+    'thm.1.val': 'TOP 5%', 'thm.1.label': 'Umiestnenie', 'thm.2.val': '100+', 'thm.2.label': 'Dokončené miestnosti',
+    'thm.3.val': '15', 'thm.3.label': 'Odznaky', 'thm.4.val': '35+', 'thm.4.label': 'Dní v rade',
+    'edu.1.school': 'Cirkevná spojená škola Dolný Kubín', 'edu.1.degree': 'Informačné technológie',
+    'exp.1.role': 'IT Support', 'exp.1.type': 'Part-time · Hybrid', 'exp.1.period': 'Jul 2024 – súčasnosť',
+    'exp.1.b1': 'Základná IT podpora pre zariadenia Windows a macOS',
+    'exp.1.b2': 'Diagnostika a riešenie hardvérových a softvérových problémov',
+    'exp.1.b3': 'Správa a aktualizácia obsahu webovej stránky spoločnosti',
+    'exp.1.b4': 'Vývoj jednoduchého online systému na sledovanie financií',
+    'exp.1.b5': 'Identifikácia pokusov o phishing a bežných bezpečnostných rizík',
+    'exp.1.b6': 'Podpora pri základnom nastavení a údržbe hardvéru',
+    'sec.contact': 'Kontakt',
+  },
+  en: {
+    'nav.projects': 'PROJECTS', 'nav.certs': 'CERTIFICATIONS', 'nav.thm': 'TRYHACKME',
+    'nav.edu': 'EDUCATION', 'nav.contact': 'CONTACT',
+    'hero.tag': 'Cybersecurity · Slovakia',
+    'hero.quote': '"The biggest vulnerability is human."',
+    'hero.desc': 'A student from Slovakia passionate about cybersecurity. I love figuring out how things work — and how they can be secured or exploited. Currently working toward TryHackMe SEC1.',
+    'hero.btnContact': 'Contact', 'hero.btnCerts': 'Certifications',
+    'meta.location': 'Dolný Kubín, Slovakia', 'meta.status': 'TOP 5% TryHackMe', 'meta.repos': '17 GitHub repositories',
+    'ncsf.1': 'Identify', 'ncsf.2': 'Protect', 'ncsf.3': 'Detect', 'ncsf.4': 'Respond', 'ncsf.5': 'Recover', 'ncsf.6': 'Repeat 🔁',
+    'sec.projects': 'Projects', 'sec.certs': 'Certifications', 'sec.thm': 'TryHackMe Stats',
+    'sec.edu': 'Education', 'sec.exp': 'Experience', 'sec.contact': 'Contact',
+    'proj.1.desc': 'Simple but effective phishing attack example running on localhost — educational project.',
+    'proj.2.desc': 'Quick tool to retrieve public information about any IP address via ipapi.co.',
+    'proj.3.desc': 'Documentation of reverse shell implementations in multiple languages, with detection and prevention.',
+    'proj.4.desc': 'Fast and practical wordlist generator for penetration testing.',
+    'proj.5.desc': 'ESP32 tripwire monitoring system connected with a Web API — physical security.',
+    'proj.6.desc': 'Network scanner for subnet device discovery — fast and lightweight.',
+    'cert.1.name': 'SQL Injection Attacks', 'cert.2.name': 'Pre Security (SEC0) Certificate',
+    'cert.2.badge': 'Expires Apr 2029', 'cert.3.name': 'Junior Cybersecurity Analyst Career Path',
+    'cert.4.name': 'Cyber Threat Management', 'cert.5.name': 'Cybersecurity Manager 1',
+    'cert.6.name': 'Ethical Hacker', 'cert.6.badge': 'Ethical Hacking · Penetration Testing',
+    'cert.7.name': 'Introduction to Cybersecurity', 'cert.8.name': 'Cybersecurity Incident Management',
+    'cert.9.name': 'Basics of Cybersecurity',
+    'thm.1.val': 'TOP 5%', 'thm.1.label': 'Rank', 'thm.2.val': '100+', 'thm.2.label': 'Rooms Completed',
+    'thm.3.val': '15', 'thm.3.label': 'Badges', 'thm.4.val': '35+', 'thm.4.label': 'Streak Days',
+    'edu.1.school': 'Cirkevná spojená škola Dolný Kubín', 'edu.1.degree': 'Information Technology',
+    'exp.1.role': 'IT Support', 'exp.1.type': 'Part-time · Hybrid', 'exp.1.period': 'Jul 2024 – Present',
+    'exp.1.b1': 'Provided basic IT support for Windows and macOS devices',
+    'exp.1.b2': 'Assisted with troubleshooting hardware and software issues',
+    'exp.1.b3': 'Managed and updated company website content',
+    'exp.1.b4': 'Developed a simple online finance tracking system',
+    'exp.1.b5': 'Helped identify phishing attempts and common security risks',
+    'exp.1.b6': 'Supported basic hardware setup and maintenance',
+    'sec.contact': 'Contact',
+  }
 };
 
-function setLanguage(lang) {
-    // fade out translated elements
-    const elements = document.querySelectorAll("[data-key]");
-    elements.forEach(el => el.style.opacity = 0);
-    setTimeout(() => {
-        //smooth transition
-        elements.forEach(el => {
-            //loop thru > replace text
-            const key = el.getAttribute("data-key");
-            if(translations[lang][key]) el.textContent = translations[lang][key];
-            el.style.opacity = 1;
-        });
-    }, 150);
-    document.getElementById('skBtn').classList.toggle('active', lang === 'sk');
-    document.getElementById('enBtn').classList.toggle('active', lang === 'en');}
-    // bind btns to lang switching
-document.getElementById('skBtn').addEventListener('click', ()=>setLanguage('sk'));
-document.getElementById('enBtn').addEventListener('click', ()=>setLanguage('en')); 
-setLanguage('sk');
-// scroll progress system
-function updateProgressBar() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("progressFill").style.height = scrolled + "%";
+let lang = 'sk';
+function applyLang(l) {
+  lang = l;
+  const els = document.querySelectorAll('[data-key]');
+  els.forEach(el => {
+    const k = el.getAttribute('data-key');
+    if (T[l][k] !== undefined) el.textContent = T[l][k];
+  });
+  document.getElementById('skBtn').classList.toggle('active', l === 'sk');
+  document.getElementById('enBtn').classList.toggle('active', l === 'en');
 }
-// sync bar w/ scroll
-window.addEventListener("scroll", updateProgressBar);
-window.addEventListener("load", updateProgressBar);
-// credit >> stackoverflow w3schools chatgpt deepseek
+document.getElementById('skBtn').addEventListener('click', () => applyLang('sk'));
+document.getElementById('enBtn').addEventListener('click', () => applyLang('en'));
+applyLang('sk');
 </script>
 </body>
 </html>
