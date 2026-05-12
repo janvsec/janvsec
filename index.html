@@ -141,13 +141,7 @@ h1 {
   letter-spacing: -.055em;
   line-height: .88;
   margin-bottom: 12px;
-  background: linear-gradient(
-    150deg,
-    #ffffff  0%,
-    #e0e0e0 20%,
-    #a0a0a0 55%,
-    #404040 100%
-  );
+  background: linear-gradient(150deg, #ffffff 0%, #e0e0e0 20%, #a0a0a0 55%, #404040 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,10 +190,7 @@ h1 {
   background: var(--bg1); border: 1px solid var(--line);
   border-radius: var(--r); display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
 }
-.ncsf-label {
-  font-family: var(--mono); font-size: 10px; color: var(--muted);
-  letter-spacing: .1em; white-space: nowrap;
-}
+.ncsf-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; white-space: nowrap; }
 .ncsf-pills { display: flex; gap: 4px; flex-wrap: wrap; }
 .ncsf-pill {
   font-family: var(--mono); font-size: 12px;
@@ -207,7 +198,6 @@ h1 {
   border-radius: 3px; color: var(--sub); background: var(--bg2); letter-spacing: .04em;
 }
 
-/* SECTIONS */
 .section { padding: 68px 0; border-bottom: 1px solid var(--line); }
 .section:last-of-type { border-bottom: none; }
 
@@ -220,7 +210,6 @@ h1 {
 }
 .s-line { flex: 1; height: 1px; background: var(--line); }
 
-/* PROJECTS */
 .proj-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
   border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
@@ -242,14 +231,18 @@ h1 {
 .proj-desc { font-size: 12px; color: var(--sub); line-height: 1.65; flex: 1; }
 .proj-foot { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
 .ldot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.ldot.php    { background: #6e7abf; }
-.ldot.python { background: #3572A5; }
-.ldot.shell  { background: #888; }
-.ldot.cpp    { background: #999; }
-.ldot.html   { background: #777; }
+.ldot.php      { background: #6e7abf; }
+.ldot.python   { background: #3572A5; }
+.ldot.shell    { background: #888; }
+.ldot.cpp      { background: #999; }
+.ldot.html     { background: #777; }
+.ldot.forensics{ background: #5a9fd4; }
+.ldot.crypto   { background: #e8a838; }
+.ldot.malware  { background: #cc4444; }
+.ldot.offensive{ background: #3dba6e; }
+.ldot.osint    { background: #7b6fe8; }
 .proj-lang { font-family: var(--mono); font-size: 12px; color: var(--sub); }
 
-/* CERTS */
 .cert-list { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
 .cert-row {
   display: flex; align-items: flex-start; gap: 14px;
@@ -258,65 +251,35 @@ h1 {
 .cert-row:last-child { border-bottom: none; }
 .cert-row:hover { background: var(--bg1); }
 
-/* Colored cert icons */
 .cert-icon {
   width: 32px; height: 32px; flex-shrink: 0; border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--mono); font-size: 9px; font-weight: 700; margin-top: 1px;
-  letter-spacing: .02em; border: none;
+  letter-spacing: .02em;
 }
-.cert-icon.cr {
-  background: #1a2a4a;
-  color: #5a9fd4;
-  border: 1px solid #2a4a7a;
-}
-.cert-icon.th {
-  background: #1a2e22;
-  color: #3dba6e;
-  border: 1px solid #2a5a3a;
-}
-.cert-icon.ci {
-  background: #1c1a2e;
-  color: #7b6fe8;
-  border: 1px solid #3a2e6a;
-}
-.cert-icon.sk {
-  background: #2a1a1a;
-  color: #cc4444;
-  border: 1px solid #5a2222;
-}
+.cert-icon.cr { background: #1a2a4a; color: #5a9fd4; border: 1px solid #2a4a7a; }
+.cert-icon.th { background: #1a2e22; color: #3dba6e; border: 1px solid #2a5a3a; }
+.cert-icon.ci { background: #1c1a2e; color: #7b6fe8; border: 1px solid #3a2e6a; }
+.cert-icon.sk { background: #2a1a1a; color: #cc4444; border: 1px solid #5a2222; }
 
-/* Colored dots for cert companies */
 .cert-company-dot {
-  display: inline-block;
-  width: 6px; height: 6px; border-radius: 50%;
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
   margin-right: 5px; vertical-align: middle; flex-shrink: 0;
 }
-.dot-cr   { background: #5a9fd4; }
-.dot-thm  { background: #3dba6e; }
-.dot-ci   { background: #7b6fe8; }
-.dot-sk   { background: #cc4444; }
+.dot-cr  { background: #5a9fd4; }
+.dot-thm { background: #3dba6e; }
+.dot-ci  { background: #7b6fe8; }
+.dot-sk  { background: #cc4444; }
 
 .cert-body { flex: 1; min-width: 0; }
 .cert-name { font-size: 13px; font-weight: 600; color: var(--text); }
-.cert-meta {
-  font-family: var(--mono); font-size: 12px; color: var(--sub);
-  margin-top: 2px; display: flex; align-items: center;
-}
+.cert-meta { font-family: var(--mono); font-size: 12px; color: var(--sub); margin-top: 2px; display: flex; align-items: center; }
 .cert-id   { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 3px; }
 .cert-date { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; flex-shrink: 0; padding-top: 2px; }
 
-/* cert legend */
-.cert-legend {
-  display: flex; gap: 16px; flex-wrap: wrap;
-  margin-bottom: 14px;
-  font-family: var(--mono); font-size: 11px; color: var(--muted);
-}
-.cert-legend-item {
-  display: flex; align-items: center; gap: 6px;
-}
+.cert-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.cert-legend-item { display: flex; align-items: center; gap: 6px; }
 
-/* THM STATS */
 .stat-grid {
   display: grid; grid-template-columns: repeat(4,1fr);
   border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
@@ -341,132 +304,129 @@ h1 {
 .thm-link-bar a:hover { color: var(--white); }
 .thm-cert-note { font-family: var(--mono); font-size: 12px; color: var(--sub); margin-left: auto; }
 
-/* EDUCATION */
-.edu-block {
-  display: flex; gap: 0;
-  border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
-}
+.edu-block { display: flex; gap: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
 .edu-gutter {
-  width: 48px; flex-shrink: 0;
-  background: var(--bg1); border-right: 1px solid var(--line);
-  display: flex; flex-direction: column;
-  align-items: center; padding: 20px 0; gap: 5px;
-  position: relative;
+  width: 48px; flex-shrink: 0; background: var(--bg1); border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 5px; position: relative;
 }
 .edu-gutter::after {
-  content: '';
-  position: absolute; top: 44px; bottom: 44px;
-  left: 50%; transform: translateX(-50%);
-  width: 1px; background: var(--line2);
+  content: ''; position: absolute; top: 44px; bottom: 44px;
+  left: 50%; transform: translateX(-50%); width: 1px; background: var(--line2);
 }
-.edu-ln {
-  font-family: var(--mono); font-size: 10px; color: var(--line2);
-  position: relative; z-index: 1; background: var(--bg1);
-  width: 100%; text-align: center; padding: 1px 0; letter-spacing: .02em;
-}
+.edu-ln { font-family: var(--mono); font-size: 10px; color: var(--line2); position: relative; z-index: 1; background: var(--bg1); width: 100%; text-align: center; padding: 1px 0; letter-spacing: .02em; }
 .edu-ln.hi { color: var(--muted); }
 .edu-content { flex: 1; padding: 22px 26px; transition: background .12s; }
 .edu-block:hover .edu-content { background: var(--bg1); }
-.edu-prompt {
-  font-family: var(--mono); font-size: 12px; color: var(--muted);
-  margin-bottom: 16px; display: flex; align-items: center; gap: 6px;
-}
+.edu-prompt { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
 .edu-prompt .ps  { color: var(--line2); }
 .edu-prompt .cmd { color: var(--sub); }
-.edu-school {
-  font-size: 15px; font-weight: 700; color: var(--white);
-  margin-bottom: 3px; letter-spacing: -.02em;
-}
+.edu-school { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 3px; letter-spacing: -.02em; }
 .edu-degree { font-size: 13px; color: var(--sub); margin-bottom: 16px; }
 .edu-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
-.edu-period {
-  font-family: var(--mono); font-size: 12px; color: var(--sub);
-  border: 1px solid var(--line); border-radius: 3px; padding: 3px 12px; background: var(--bg2);
-}
-.edu-status {
-  font-family: var(--mono); font-size: 12px; color: var(--sub);
-  display: flex; align-items: center; gap: 5px;
-}
-.edu-status-dot {
-  width: 5px; height: 5px; background: var(--sub); border-radius: 50%;
-  animation: pulse 2.6s ease-in-out infinite;
-}
+.edu-period { font-family: var(--mono); font-size: 12px; color: var(--sub); border: 1px solid var(--line); border-radius: 3px; padding: 3px 12px; background: var(--bg2); }
+.edu-status { font-family: var(--mono); font-size: 12px; color: var(--sub); display: flex; align-items: center; gap: 5px; }
+.edu-status-dot { width: 5px; height: 5px; background: var(--sub); border-radius: 50%; animation: pulse 2.6s ease-in-out infinite; }
 .edu-skills { display: flex; gap: 5px; flex-wrap: wrap; }
-.edu-tag {
-  font-family: var(--mono); font-size: 11px; color: var(--sub);
-  background: var(--bg2); border: 1px solid var(--line);
-  border-radius: 3px; padding: 2px 8px; letter-spacing: .04em;
-}
+.edu-tag { font-family: var(--mono); font-size: 11px; color: var(--sub); background: var(--bg2); border: 1px solid var(--line); border-radius: 3px; padding: 2px 8px; letter-spacing: .04em; }
 
-/* EXPERIENCE */
 .exp-card { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
-.exp-head {
-  padding: 18px 22px; border-bottom: 1px solid var(--line);
-  display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;
-}
+.exp-head { padding: 18px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
 .exp-role { font-size: 15px; font-weight: 600; color: var(--white); }
 .exp-co { font-family: var(--mono); font-size: 12px; color: var(--sub); margin-top: 3px; }
-.exp-badge {
-  font-family: var(--mono); font-size: 12px; color: var(--sub);
-  border: 1px solid var(--line); border-radius: 4px; padding: 4px 12px;
-  background: var(--bg2); white-space: nowrap; height: fit-content;
-}
-.exp-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 12px 22px; border-bottom: 1px solid var(--line);
-  font-size: 13px; color: var(--sub); line-height: 1.65;
-}
+.exp-badge { font-family: var(--mono); font-size: 12px; color: var(--sub); border: 1px solid var(--line); border-radius: 4px; padding: 4px 12px; background: var(--bg2); white-space: nowrap; height: fit-content; }
+.exp-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 22px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--sub); line-height: 1.65; }
 .exp-item:last-child { border-bottom: none; }
 .exp-arrow { font-family: var(--mono); color: var(--muted); flex-shrink: 0; margin-top: 1px; font-size: 11px; }
 
-/* CONTACT - centered */
-#contact .section-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ctf-wrap { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+
+.ctf-header-bar {
+  padding: 16px 20px; border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.ctf-event-name { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: -.02em; }
+.ctf-event-sub  { font-family: var(--mono); font-size: 12px; color: var(--sub); margin-top: 2px; }
+
+.ctf-rank-pill {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--bg2); border: 1px solid var(--line2); border-radius: 6px; padding: 10px 18px;
+}
+.ctf-rank-block { text-align: center; }
+.ctf-rank-num   { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--white); letter-spacing: -.03em; }
+.ctf-rank-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; margin-top: 1px; }
+.ctf-rank-div   { width: 1px; height: 32px; background: var(--line2); }
+
+.ctf-stat-row { display: flex; border-bottom: 1px solid var(--line); }
+.ctf-stat-box { flex: 1; padding: 16px 20px; border-right: 1px solid var(--line); }
+.ctf-stat-box:last-child { border-right: none; }
+.ctf-stat-val { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--white); letter-spacing: -.03em; margin-bottom: 4px; }
+.ctf-stat-key { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+
+.ctf-cats-bar { padding: 13px 20px; border-bottom: 1px solid var(--line); }
+.ctf-cats-label { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 9px; }
+.ctf-cats { display: flex; gap: 5px; flex-wrap: wrap; }
+.ctf-cat-chip {
+  display: flex; align-items: center; gap: 5px;
+  font-family: var(--mono); font-size: 11px; color: var(--sub);
+  background: var(--bg2); border: 1px solid var(--line2); border-radius: 3px; padding: 3px 10px;
 }
 
-.link-list {
-  border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
-  width: 100%; max-width: 520px;
+.ctf-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px; cursor: pointer; user-select: none;
+  background: var(--bg1); border-top: 1px solid var(--line);
+  transition: background .12s;
 }
-.link-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 15px 20px; border-bottom: 1px solid var(--line); transition: background .12s;
+.ctf-toggle:hover { background: var(--bg2); }
+.ctf-toggle-label { font-family: var(--mono); font-size: 11px; color: var(--sub); letter-spacing: .07em; }
+.ctf-toggle-arr   { font-family: var(--mono); font-size: 11px; color: var(--muted); transition: transform .22s; }
+.ctf-toggle-arr.open { transform: rotate(180deg); }
+
+.ctf-body { overflow: hidden; max-height: 0; transition: max-height .35s ease; }
+.ctf-body.open { max-height: 9999px; }
+
+.ctf-thead {
+  display: grid; grid-template-columns: 1fr 160px 60px 118px;
+  padding: 8px 20px; border-bottom: 1px solid var(--line);
+  font-family: var(--mono); font-size: 10px; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase; background: var(--bg1);
 }
+.ctf-row {
+  display: grid; grid-template-columns: 1fr 160px 60px 118px;
+  padding: 10px 20px; border-bottom: 1px solid var(--line);
+  align-items: center; transition: background .12s;
+}
+.ctf-row:last-child { border-bottom: none; }
+.ctf-row:hover { background: var(--bg1); }
+.ctf-task { font-size: 13px; color: var(--text); font-weight: 500; }
+.ctf-cat  { font-family: var(--mono); font-size: 11px; color: var(--sub); display: flex; align-items: center; gap: 5px; }
+.ctf-pts  { font-family: var(--mono); font-size: 13px; color: var(--sub); }
+.ctf-time { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+
+#contact .section-inner { display: flex; flex-direction: column; align-items: center; }
+.link-list { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; width: 100%; max-width: 520px; }
+.link-row { display: flex; align-items: center; gap: 14px; padding: 15px 20px; border-bottom: 1px solid var(--line); transition: background .12s; }
 .link-row:last-child { border-bottom: none; }
 .link-row:hover { background: var(--bg1); }
-.link-ico {
-  width: 34px; height: 34px; flex-shrink: 0;
-  border-radius: 7px;
-  display: flex; align-items: center; justify-content: center;
-}
-/* Colored contact icons */
-.link-ico.li-linkedin { background: #0a2a4a; border: 1px solid #1a4a7a; }
-.link-ico.li-github   { background: #111; border: 1px solid #333; }
+.link-ico { width: 34px; height: 34px; flex-shrink: 0; border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+.link-ico.li-linkedin  { background: #0a2a4a; border: 1px solid #1a4a7a; }
+.link-ico.li-github    { background: #111;    border: 1px solid #333; }
 .link-ico.li-instagram { background: #2a1a2a; border: 1px solid #5a2a5a; }
-.link-ico.li-email    { background: #1a2a1a; border: 1px solid #2a5a2a; }
-
+.link-ico.li-email     { background: #1a2a1a; border: 1px solid #2a5a2a; }
 .link-body { flex: 1; min-width: 0; }
 .link-name { font-size: 13px; font-weight: 600; color: var(--text); }
 .link-sub  { font-family: var(--mono); font-size: 12px; color: var(--sub); margin-top: 1px; }
 .link-arr  { font-size: 12px; color: var(--muted); transition: all .12s; flex-shrink: 0; }
 .link-row:hover .link-arr { color: var(--sub); transform: translateX(2px); }
 
-/* FOOTER */
 footer { border-top: 1px solid var(--line); padding: 20px 28px; }
-.footer-inner {
-  max-width: 860px; margin: 0 auto;
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
-}
+.footer-inner { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .footer-l { font-family: var(--mono); font-size: 12px; color: var(--sub); letter-spacing: .04em; }
 .footer-r { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-/* REVEAL */
 .rv { opacity: 0; transform: translateY(12px); transition: opacity .42s ease, transform .42s ease; }
 .rv.in { opacity: 1; transform: none; }
 
-/* RESPONSIVE */
 @media (max-width:640px) {
   nav { padding: 0 16px; }
   .nav-links { display: none; }
@@ -486,6 +446,15 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
   .edu-gutter::after { display: none; }
   .exp-head { flex-direction: column; }
   footer { padding: 18px 16px; }
+  .ctf-thead { grid-template-columns: 1fr 60px; }
+  .ctf-thead span:nth-child(n+3) { display: none; }
+  .ctf-row { grid-template-columns: 1fr 60px; }
+  .ctf-row > *:nth-child(n+3) { display: none; }
+  .ctf-stat-row { flex-wrap: wrap; }
+  .ctf-stat-box { min-width: 50%; }
+  .ctf-stat-box:nth-child(2) { border-right: none; }
+  .ctf-stat-box:nth-child(3) { border-top: 1px solid var(--line); }
+  .ctf-stat-box:nth-child(4) { border-right: none; border-top: 1px solid var(--line); }
 }
 </style>
 </head>
@@ -504,6 +473,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
       <li><a href="#certs"    data-key="nav.cert">./certs</a></li>
       <li><a href="#thm"      data-key="nav.thm">./tryhackme</a></li>
       <li><a href="#edu"      data-key="nav.edu">./education</a></li>
+      <li><a href="#ctf"      data-key="nav.ctf">./ctf</a></li>
       <li><a href="#contact"  data-key="nav.con">./contact</a></li>
     </ul>
   </div>
@@ -520,20 +490,15 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
       <div class="hero-eyebrow-dot"></div>
       <span data-key="h.eye">Kybernetická bezpečnosť · Slovensko</span>
     </div>
-
     <h1>JÁN<br>VOJVODA</h1>
     <div class="hero-handle"><span class="at">@</span>janvsec &nbsp;·&nbsp; he/him</div>
-
     <div class="hero-quote" data-key="h.quote">"The biggest vulnerability is human."</div>
-
     <p class="hero-bio" data-key="h.bio">Som <strong>17-ročný študent</strong> zo Slovenska s vášňou pre kybernetickú bezpečnosť. Rád zisťujem, ako veci fungujú a ako ich možno zabezpečiť alebo zneužiť.</p>
-
     <div class="hero-actions">
       <a href="#contact" class="btn btn-dark"  data-key="h.bc">./contact</a>
       <a href="#certs"   class="btn btn-ghost" data-key="h.bs">./certs</a>
       <a href="https://tryhackme.com/p/janvojvoda" target="_blank" class="btn btn-ghost">tryhackme ↗</a>
     </div>
-
     <div class="hero-meta">
       <div class="meta-item">
         <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3" stroke-width="2"/></svg>
@@ -548,7 +513,6 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
         <span data-key="m.rank">TOP 5% TryHackMe · streak 35 +</span>
       </div>
     </div>
-
     <div class="ncsf rv">
       <span class="ncsf-label">$ ncsf --list</span>
       <div class="ncsf-pills">
@@ -614,15 +578,12 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
       <h2 class="s-title" data-key="s.cert">~/certs</h2>
       <div class="s-line"></div>
     </div>
-
-    <!-- Legend -->
     <div class="cert-legend rv">
       <div class="cert-legend-item"><span class="cert-company-dot dot-cr"></span>EC-Council / CodeRed</div>
       <div class="cert-legend-item"><span class="cert-company-dot dot-thm"></span>TryHackMe</div>
       <div class="cert-legend-item"><span class="cert-company-dot dot-ci"></span>Cisco Networking Academy</div>
       <div class="cert-legend-item"><span class="cert-company-dot dot-sk"></span>SK Cert Centre</div>
     </div>
-
     <div class="cert-list rv">
       <a href="https://learn.eccouncil.org/certificate/39134650-6e33-4ab5-8712-aa5c960e0b1c" target="_blank" class="cert-row">
         <div class="cert-icon cr">CR</div>
@@ -798,9 +759,118 @@ footer { border-top: 1px solid var(--line); padding: 20px 28px; }
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="ctf" class="section">
     <div class="s-head rv">
       <span class="s-num">06</span>
+      <h2 class="s-title" data-key="s.ctf">~/ctf</h2>
+      <div class="s-line"></div>
+    </div>
+
+    <div class="ctf-wrap rv">
+
+      <div class="ctf-header-bar">
+        <div>
+          <div class="ctf-event-name" data-key="ctf.name">CyberGame 2026</div>
+          <div class="ctf-event-sub" data-key="ctf.sub">Národná CTF súťaž · Slovensko</div>
+        </div>
+        <div class="ctf-rank-pill">
+          <div class="ctf-rank-block">
+            <div class="ctf-rank-num">#41</div>
+            <div class="ctf-rank-label" data-key="ctf.rl">UMIESTNENIE</div>
+          </div>
+          <div class="ctf-rank-div"></div>
+          <div class="ctf-rank-block">
+            <div class="ctf-rank-num">7830</div>
+            <div class="ctf-rank-label" data-key="ctf.pl">BODY</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ctf-stat-row">
+        <div class="ctf-stat-box">
+          <div class="ctf-stat-val">35</div>
+          <div class="ctf-stat-key" data-key="ctf.s1">Vyriešené</div>
+        </div>
+        <div class="ctf-stat-box">
+          <div class="ctf-stat-val">56%</div>
+          <div class="ctf-stat-key" data-key="ctf.s2">Úspešnosť</div>
+        </div>
+        <div class="ctf-stat-box">
+          <div class="ctf-stat-val">5</div>
+          <div class="ctf-stat-key" data-key="ctf.s3">Kategórie</div>
+        </div>
+        <div class="ctf-stat-box">
+          <div class="ctf-stat-val">May 2026</div>
+          <div class="ctf-stat-key" data-key="ctf.s4">Dátum</div>
+        </div>
+      </div>
+
+      <div class="ctf-cats-bar">
+        <div class="ctf-cats-label">$ ls ./categories</div>
+        <div class="ctf-cats">
+          <span class="ctf-cat-chip"><span class="ldot offensive"></span><span data-key="cat.off">Ofenzívna bezpečnosť (34%)</span></span>
+          <span class="ctf-cat-chip"><span class="ldot forensics"></span><span data-key="cat.for">Forenzná analýza (29%)</span></span>
+          <span class="ctf-cat-chip"><span class="ldot crypto"></span><span data-key="cat.cry">Kryptografia (17%)</span></span>
+          <span class="ctf-cat-chip"><span class="ldot malware"></span><span data-key="cat.mal">Malvérová analýza (14%)</span></span>
+          <span class="ctf-cat-chip"><span class="ldot osint"></span>OSINT (6%)</span>
+        </div>
+      </div>
+
+      <div class="ctf-toggle" id="ctfToggle">
+        <span class="ctf-toggle-label" data-key="ctf.expand">$ cat solves.log</span>
+        <span class="ctf-toggle-arr" id="ctfArr">▼</span>
+      </div>
+
+      <div class="ctf-body" id="ctfBody">
+        <div class="ctf-thead">
+          <span data-key="ctf.th1">Úloha</span>
+          <span data-key="ctf.th2">Kategória</span>
+          <span data-key="ctf.th3">Body</span>
+          <span data-key="ctf.th4">Čas</span>
+        </div>
+        <div class="ctf-row"><div class="ctf-task">Signals from the &lt;void&gt;</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">162</div><div class="ctf-time">May 9 · 19:15</div></div>
+        <div class="ctf-row"><div class="ctf-task">RSA – Hellish RSA</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">427</div><div class="ctf-time">May 9 · 19:13</div></div>
+        <div class="ctf-row"><div class="ctf-task">RSA – French technology</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">211</div><div class="ctf-time">May 9 · 16:01</div></div>
+        <div class="ctf-row"><div class="ctf-task">Intergalactic – Keypad</div><div class="ctf-cat"><span class="ldot malware"></span><span data-key="cat.mal2">Malvérová analýza</span></div><div class="ctf-pts">352</div><div class="ctf-time">May 9 · 14:29</div></div>
+        <div class="ctf-row"><div class="ctf-task">SnailNet</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">481</div><div class="ctf-time">May 8 · 16:04</div></div>
+        <div class="ctf-row"><div class="ctf-task">Volatile incident – Instance of a program</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">454</div><div class="ctf-time">May 7 · 23:04</div></div>
+        <div class="ctf-row"><div class="ctf-task">Reversing – Picking letters</div><div class="ctf-cat"><span class="ldot malware"></span><span data-key="cat.mal2">Malvérová analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 7 · 17:37</div></div>
+        <div class="ctf-row"><div class="ctf-task">rEquestria – Lesson Zero</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">293</div><div class="ctf-time">May 7 · 17:27</div></div>
+        <div class="ctf-row"><div class="ctf-task">Volatile incident – Activity check</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">388</div><div class="ctf-time">May 6 · 22:51</div></div>
+        <div class="ctf-row"><div class="ctf-task">Forensics Sanity Check – Elephant2</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 22:36</div></div>
+        <div class="ctf-row"><div class="ctf-task">Forensics Sanity Check – Elephant1</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 22:33</div></div>
+        <div class="ctf-row"><div class="ctf-task">Return of eliptic – Goldilocks</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 21:49</div></div>
+        <div class="ctf-row"><div class="ctf-task">Return the blow – The notes</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">457</div><div class="ctf-time">May 6 · 21:38</div></div>
+        <div class="ctf-row"><div class="ctf-task">Return the blow – Broken trust</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">454</div><div class="ctf-time">May 6 · 21:38</div></div>
+        <div class="ctf-row"><div class="ctf-task">Return the blow – Prying eyes</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">440</div><div class="ctf-time">May 6 · 21:16</div></div>
+        <div class="ctf-row"><div class="ctf-task">Administrative tasks – Portable</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 17:34</div></div>
+        <div class="ctf-row"><div class="ctf-task">Administrative tasks – Paragraphs</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 16:11</div></div>
+        <div class="ctf-row"><div class="ctf-task">Telemetry</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">443</div><div class="ctf-time">May 6 · 15:00</div></div>
+        <div class="ctf-row"><div class="ctf-task">Administrative tasks – Tables</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 14:55</div></div>
+        <div class="ctf-row"><div class="ctf-task">SPAN sniff</div><div class="ctf-cat"><span class="ldot forensics"></span><span data-key="cat.for2">Forenzná analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 6 · 14:54</div></div>
+        <div class="ctf-row"><div class="ctf-task">ORMT – ormt3</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">299</div><div class="ctf-time">May 5 · 22:06</div></div>
+        <div class="ctf-row"><div class="ctf-task">ORMT – ormt2</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">263</div><div class="ctf-time">May 5 · 20:33</div></div>
+        <div class="ctf-row"><div class="ctf-task">WebBasics – OTP</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">366</div><div class="ctf-time">May 5 · 19:42</div></div>
+        <div class="ctf-row"><div class="ctf-task">Maverick</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">440</div><div class="ctf-time">May 5 · 19:26</div></div>
+        <div class="ctf-row"><div class="ctf-task">ORMT – ormt</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 5 · 16:00</div></div>
+        <div class="ctf-row"><div class="ctf-task">JailPS – safeps2</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 5 · 15:48</div></div>
+        <div class="ctf-row"><div class="ctf-task">JailPS – safeps</div><div class="ctf-cat"><span class="ldot offensive"></span><span data-key="cat.off2">Ofenzívna bezpečnosť</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 5 · 15:34</div></div>
+        <div class="ctf-row"><div class="ctf-task">Crypto Sanity Check – x^y encryption</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 5 · 14:20</div></div>
+        <div class="ctf-row"><div class="ctf-task">To True or Not To True</div><div class="ctf-cat"><span class="ldot malware"></span><span data-key="cat.mal2">Malvérová analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">May 5 · 11:35</div></div>
+        <div class="ctf-row"><div class="ctf-task">Reversing – Matrix sudoku</div><div class="ctf-cat"><span class="ldot malware"></span><span data-key="cat.mal2">Malvérová analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:24</div></div>
+        <div class="ctf-row"><div class="ctf-task">Malware Sanity Check – plaintext malware</div><div class="ctf-cat"><span class="ldot malware"></span><span data-key="cat.mal2">Malvérová analýza</span></div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:10</div></div>
+        <div class="ctf-row"><div class="ctf-task">Crypto Sanity Check – Layers of encoding</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:09</div></div>
+        <div class="ctf-row"><div class="ctf-task">Crypto Sanity Check – rotted</div><div class="ctf-cat"><span class="ldot crypto"></span><span data-key="cat.cry2">Kryptografia</span></div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:02</div></div>
+        <div class="ctf-row"><div class="ctf-task">Osint Sanity Check – Plain TXT</div><div class="ctf-cat"><span class="ldot osint"></span>OSINT</div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:01</div></div>
+        <div class="ctf-row"><div class="ctf-task">Osint Sanity Check – Flag is in the description</div><div class="ctf-cat"><span class="ldot osint"></span>OSINT</div><div class="ctf-pts">100</div><div class="ctf-time">Mar 1 · 14:00</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="s-head rv">
+      <span class="s-num">07</span>
       <h2 class="s-title" data-key="s.con">~/contact</h2>
       <div class="s-line"></div>
     </div>
@@ -862,9 +932,16 @@ const io = new IntersectionObserver(es =>
 );
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
+document.getElementById('ctfToggle').addEventListener('click', () => {
+  const body = document.getElementById('ctfBody');
+  const arr  = document.getElementById('ctfArr');
+  body.classList.toggle('open');
+  arr.classList.toggle('open');
+});
+
 const T = {
   sk: {
-    'nav.proj':'./projekty','nav.cert':'./osvedčenia','nav.thm':'./tryhackme','nav.edu':'./vzdelanie','nav.con':'./kontakt',
+    'nav.proj':'./projekty','nav.cert':'./osvedčenia','nav.thm':'./tryhackme','nav.edu':'./vzdelanie','nav.ctf':'./ctf','nav.con':'./kontakt',
     'h.eye':'Kybernetická bezpečnosť · Slovensko',
     'h.quote':'"The biggest vulnerability is human."',
     'h.bio':'Som <strong>17-ročný študent</strong> zo Slovenska s vášňou pre kybernetickú bezpečnosť. Rád zisťujem, ako veci fungujú a ako ich možno zabezpečiť alebo zneužiť.',
@@ -872,7 +949,7 @@ const T = {
     'm.loc':'Dolný Kubín, Slovensko',
     'm.rank':'TOP 5% TryHackMe · streak 35 +',
     'n.1':'Identifikovať','n.2':'Chrániť','n.3':'Detekovať','n.4':'Reagovať','n.5':'Obnoviť','n.6':'Opakovať ↺',
-    's.proj':'~/projects','s.cert':'~/certs','s.thm':'~/tryhackme','s.edu':'~/education','s.exp':'~/experience','s.con':'~/contact',
+    's.proj':'~/projects','s.cert':'~/certs','s.thm':'~/tryhackme','s.edu':'~/education','s.exp':'~/experience','s.ctf':'~/ctf','s.con':'~/contact',
     'p1':'Funkčný príklad phishingového útoku na localhoste - vzdelávací projekt.',
     'p2':'Nástroj na zistenie verejných informácií o ľubovoľnej IP adrese.',
     'p3':'Dokumentácia reverse shell implementácií vo viacerých jazykoch + detekcia.',
@@ -894,9 +971,16 @@ const T = {
     'ex.b4':'Vývoj jednoduchého online systému na sledovanie financií',
     'ex.b5':'Identifikácia pokusov o phishing a bežných bezpečnostných rizík',
     'ex.b6':'Podpora pri základnom nastavení a údržbe hardvéru',
+    'ctf.name':'CyberGame 2026','ctf.sub':'Národná CTF súťaž · Slovensko',
+    'ctf.rl':'UMIESTNENIE','ctf.pl':'BODY',
+    'ctf.s1':'Vyriešené','ctf.s2':'Úspešnosť','ctf.s3':'Kategórie','ctf.s4':'Dátum',
+    'cat.off':'Ofenzívna bezpečnosť (34%)','cat.for':'Forenzná analýza (29%)','cat.cry':'Kryptografia (17%)','cat.mal':'Malvérová analýza (14%)',
+    'cat.off2':'Ofenzívna bezpečnosť','cat.for2':'Forenzná analýza','cat.cry2':'Kryptografia','cat.mal2':'Malvérová analýza',
+    'ctf.expand':'$ cat solves.log',
+    'ctf.th1':'Úloha','ctf.th2':'Kategória','ctf.th3':'Body','ctf.th4':'Čas',
   },
   en: {
-    'nav.proj':'./projects','nav.cert':'./certifications','nav.thm':'./tryhackme','nav.edu':'./education','nav.con':'./contact',
+    'nav.proj':'./projects','nav.cert':'./certifications','nav.thm':'./tryhackme','nav.edu':'./education','nav.ctf':'./ctf','nav.con':'./contact',
     'h.eye':'Cybersecurity · Slovakia',
     'h.quote':'"The biggest vulnerability is human."',
     'h.bio':'I\'m a <strong>17-year-old student</strong> from Slovakia passionate about cybersecurity. I love figuring out how things work and how to secure or exploit it.',
@@ -904,7 +988,7 @@ const T = {
     'm.loc':'Dolný Kubín, Slovakia',
     'm.rank':'TOP 5% TryHackMe · streak 35 +',
     'n.1':'Identify','n.2':'Protect','n.3':'Detect','n.4':'Respond','n.5':'Recover','n.6':'Repeat ↺',
-    's.proj':'~/projects','s.cert':'~/certs','s.thm':'~/tryhackme','s.edu':'~/education','s.exp':'~/experience','s.con':'~/contact',
+    's.proj':'~/projects','s.cert':'~/certs','s.thm':'~/tryhackme','s.edu':'~/education','s.exp':'~/experience','s.ctf':'~/ctf','s.con':'~/contact',
     'p1':'A working phishing attack example on localhost - educational project using Bash + PHP.',
     'p2':'Tool to retrieve public info about any IP address via ipapi.co.',
     'p3':'Documentation of reverse shell implementations across multiple languages + detection.',
@@ -926,6 +1010,13 @@ const T = {
     'ex.b4':'Developed a simple online finance tracking system',
     'ex.b5':'Helped identify phishing attempts and common security risks',
     'ex.b6':'Supported basic hardware setup and maintenance',
+    'ctf.name':'CyberGame 2026','ctf.sub':'National CTF Competition · Slovakia',
+    'ctf.rl':'RANK','ctf.pl':'POINTS',
+    'ctf.s1':'Solved','ctf.s2':'Success rate','ctf.s3':'Categories','ctf.s4':'Date',
+    'cat.off':'Offensive Security (34%)','cat.for':'Forensics (29%)','cat.cry':'Cryptography (17%)','cat.mal':'Malware Analysis (14%)',
+    'cat.off2':'Offensive Security','cat.for2':'Forensics','cat.cry2':'Cryptography','cat.mal2':'Malware Analysis',
+    'ctf.expand':'$ cat solves.log',
+    'ctf.th1':'Challenge','ctf.th2':'Category','ctf.th3':'Points','ctf.th4':'Time',
   }
 };
 
